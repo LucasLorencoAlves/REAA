@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/Conteudo.css">
+    <link rel="stylesheet" href="../_css/body.css">
+    <link rel="stylesheet" href="../_css/Estilo.css">
+
+    <title>REAA</title>
+
+</head>
+
+<body>
+    <div id="interface">
+
+        <header>
+            <h1></h1>
+            <h4></h4>
+        </header>
+        <nav id="menu">
+            <a href="#">Currículo</a>
+            <a href="Categorias.html">Categorias</a>
+            <a href="#">Open Source</a>
+            
+        </nav>
+        <section id="corpo">
+            <pre>
+             <code>
+             <font color="gray">Arquivo .hpp</font>
+             #ifndef PRODUTOESCALAR_H
+             #define PRODUTOESCALAR_H
+             
+             
+             class prodEscalar
+             {
+             
+             public:
+                 prodEscalar(int=0, int=0, int=0);
+             
+                 prodEscalar operator*(int k);
+             
+                 //Lista de funçoes
+                 int getX(),
+                     getY(),
+                     getZ();
+             
+             
+             
+             private:
+                 int _x, _y, _z;
+             
+             };
+             #endif // PRODUTOESCALAR_H
+             </code>
+            </pre>
+ ______________________________________________________________________
+ 
+ <pre>
+     <code>
+             <font color="gray">Arquivo .cpp</font>
+             
+             #include &lt;iostream&gt;
+             using namespace::std;
+             
+             #include "ProdutoEscalar.hpp"
+             
+             prodEscalar::prodEscalar(int x, int y, int z)
+             {
+                 _x=x;
+                 _y=y;
+                 _z=z;
+             }
+             
+             prodEscalar prodEscalar::operator*(int k)
+             {
+                 _x=_x*k;
+                 _y=_y*k;
+                 _z=_z*k;
+             
+                 return prodEscalar(_x, _y, _z);
+             }
+             
+             //Lista de funçoes
+             int prodEscalar::getX()
+             {
+                 return _x;
+             }
+             
+             
+             int prodEscalar::getY()
+             {
+                 return _y;
+             }
+             
+             
+             int prodEscalar::getZ()
+             {
+                 return _z;
+             }
+         
+         
+             
+     </code>
+ </pre>
+ 
+         </section>
+ 
+ 
+         <!--Lateral direito-->
+         <aside id="Lateral">
+             <article id="div-lateral">
+                 
+                 <pre>
+                     <code>
+ <font color="gray">//Arquivo main.cpp</font>
+ 
+ #include &lt;iostream&gt;
+ 
+ using namespace std;
+ 
+ #include "ProdutoEscalar.hpp"
+ 
+ int main()
+ {
+     cout &lt;&lt; "Hello REAA!" &lt;&lt; endl;
+ 
+     prodEscalar P1(2, 2, 2),
+                 P2;
+     int k=10;
+ 
+     P2=P1*k;
+ 
+     cout&lt;&lt;"("
+         &lt;&lt;P1.getX()
+         &lt;&lt;", "
+         &lt;&lt;P1.getY()
+         &lt;&lt;", "
+         &lt;&lt;P1.getZ()
+         &lt;&lt;")"
+         &lt;&lt;endl; 
+ 
+ 
+     return 0;
+ }
+ 
+ 
+                     </code>
+                 </pre>
+                 <figure class="saida_codigo">
+                     <img src="../_imagens/Screenshot from 2024-02-19 00-25-25.png" />
+                     <figcaption>
+                         <h5>
+                             Produto escalar por meio de sobrecarga do operador *... 
+                         </h5>
+                     </figcaption>
+                 </figure>
+                    
+ 
+             </article>
+         </aside>
+ 
+        
+
+    </div>
+    
+</body>
+
+</html>

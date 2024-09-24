@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/Conteudo.css">
+    <link rel="stylesheet" href="../_css/body.css">
+    <link rel="stylesheet" href="../_css/Estilo.css">
+
+    <title>REAA</title>
+
+</head>
+
+<body>
+    <div id="interface">
+
+        <header>
+            <h1></h1>
+            <h4></h4>
+        </header>
+        <nav id="menu">
+            <a href="#">Currículo</a>
+            <a href="Categorias.html">Categorias</a>
+            <a href="#">Open Source</a>
+            
+        </nav>
+        <section id="conf-aulas">
+
+            <div id="Aulas">
+                <div id="Aulas">
+                    <hgroup id="saudacoes">
+                        <h2>Templates(de funções e templates de classe)</h2>                            
+                            
+                    </hgroup>
+                    <br>
+                    <br>
+                    <p>
+                      Templates são uma alternativa à sobrecarga de funções, quando envolve
+                            lógica de programação idênticas para varios tipos de entrada de dados. </p>
+                            <p>
+                                Quando você cria uma função normal em C++, ela é específica para um tipo de dado. Por
+                                exemplo,
+                                uma função que soma dois números inteiros não funcionará diretamente para números
+                                decimais. Aqui
+                                é onde entram os templates de funções, e até mesmo templates de classe que veremos no
+                                decorrer desta página.
+
+                            </p>
+                            
+                            Quando você cria uma função normal em C++, ela é específica para um tipo de dado. Por
+                            exemplo,
+                            uma função que soma dois números inteiros não funcionará diretamente para números decimais.
+                            Aqui
+                            é onde entram os templates de funções.
+                    </p>
+
+                    <p>
+                        Com templates de funções, você pode criar uma função que funciona para diferentes tipos de
+                        dados. Por exemplo:
+                    </p>
+                 <pre>
+
+                        <code>
+                        #include &lt;iostream&gt;
+                        using namespace std;
+                        <font color="blue">        
+                        template&lt;typename <font color="green"> <font color="green"> NewType</font></font>&gt;</font>
+                        void <font color="purple"> imprimi</font>(<font color="green"> NewType</font> numero1, <font color="green"> NewType</font> numero2, <font color="green"> NewType</font> numero3, <font color="green"> NewType</font> numero4);
+                                
+                        <font color="blue">        
+                        template&lt;typename <font color="green"> <font color="green"> NewType</font></font>&gt;</font>
+                        void <font color="purple"> imprimi</font>(<font color="green"> NewType</font> numero1, <font color="green"> NewType</font> numero2, <font color="green"> NewType</font> numero3);
+                        
+                        <font color="blue">        
+                        template&lt;typename <font color="green"> <font color="green"> NewType</font></font>&gt;</font> 
+                        void <font color="purple"> imprimi</font>(<font color="green"> NewType</font> numero1, <font color="green"> NewType</font> numero2);
+                                
+                        <font color="blue">        
+                        template&lt;typename <font color="green"> <font color="green"> NewType</font></font>&gt;</font>
+                        void <font color="purple"> imprimi</font>(<font color="green"> NewType</font> numero1);
+                                
+                        int main()
+                        {
+                            cout  &lt;&lt;  "Hello REAA!"  &lt;&lt;  endl;
+                            <font color="purple"> imprimi</font>(99, 44, 3, 7);
+                            <font color="purple"> imprimi</font>(1, 8, 37);
+                            <font color="purple"> imprimi</font>(17, 66);
+                            <font color="purple"> imprimi</font>(1025);
+                                
+                                
+                                
+                                
+                            return 0;
+                        }
+                                
+                                
+                        <font color="blue">        
+                        template&lt;typename <font color="green"> <font color="green"> NewType</font></font>&gt;</font>
+                        void <font color="purple"> imprimi</font>(<font color="green"> NewType</font> numero1, <font color="green"> NewType</font> numero2, <font color="green"> NewType</font> numero3, <font color="green"> NewType</font> numero4)
+                        {
+                            cout &lt;&lt; "imprime: " &lt;&lt; numero1 &lt;&lt; '-' &lt;&lt; numero2 &lt;&lt; '-' &lt;&lt; numero3 &lt;&lt; '-' &lt;&lt; numero4 &lt;&lt; endl;
+                        }
+                                
+                        <font color="blue">        
+                        template&lt;typename <font color="green"> <font color="green"> NewType</font></font>&gt;</font>
+                        void <font color="purple"> imprimi</font>(<font color="green"> NewType</font> numero1, <font color="green"> NewType</font> numero2, <font color="green"> NewType</font> numero3)
+                        {
+                            cout &lt;&lt; "imprime: " &lt;&lt; numero1 &lt;&lt; '-' &lt;&lt; numero2 &lt;&lt; '-' &lt;&lt; numero3 &lt;&lt; endl;
+                        }
+                                
+                        <font color="blue">        
+                        template&lt;typename <font color="green"> <font color="green"> NewType</font></font>&gt;</font>  
+                        void <font color="purple"> imprimi</font>(<font color="green"> NewType</font> numero1, <font color="green"> NewType</font> numero2)
+                        {
+                            cout &lt;&lt; "imprime: " &lt;&lt; numero1 &lt;&lt; '-' &lt;&lt; numero2 &lt;&lt; endl;
+                        }
+                                
+                        <font color="blue">        
+                        template&lt;typename <font color="green"> <font color="green"> NewType</font></font>&gt;</font> 
+                        void <font color="purple"> imprimi</font>(<font color="green"> NewType</font> numero1)
+                        {
+                            cout &lt;&lt; "imprime: " &lt;&lt; numero1 &lt;&lt; endl;
+                        }
+                                
+                        </code>
+                        </pre>
+                        <figure class="Foto-AllanKay">
+                            <img src="../_imagens/codigo template.PNG" />
+                            <figcaption>
+                                <img src="../_imagens/Saida template imprimir.PNG" />
+                            </figcaption>
+                        </figure>
+                </div>
+            </div>
+
+            <p>
+                Veja a sintaxe da construção de um template de funções, antes do protótipo da função e até mesmo antes
+                da declaração do desenvolvimento
+                da dela, é declarado a palavra reservada <em>template<typename newType></em> onde, template indica que a
+                função será um template, typename
+                será um corringa para um tipo de dado, isso significa que o usuário irá colocar algum tipo de dados
+                (<em>int, double, string..</em> ) e o compilador
+                vai identificar qual tipo de dado e substituir o <em>typename</em> em tempo de compilação. A variável
+                <em>NewType</em> é um argumento qualquer
+                e eu poderia ter colocar qualquer coisa.
+            </p>
+            <p>
+                Template não tem muito mistério, mas é importante fazer leitura de algumas obras para te conhecimento
+                sobre boas práticas e dicas de uso
+                em projetos reais.
+            </p>
+            <br>
+            <br>
+            <hgroup id="saudacoes">
+                <h2>Templates(de classes)</h2>
+            </hgroup>
+            <br>
+            <br>
+            <p>
+                Templates de classe tem o mesmo propósito de template de funções, não precisar rescrever varias classes
+                com o mesmo algoritimo mas
+                com diferentes entradas de tipos de dados.
+            </p>
+            <p>
+                Analise o código abaixo. cada objeto de mesma classe imprimi diferentes tipos de dados inclusive
+                caracteres ou strings.
+                Determino uma quantidade X para o vetor de dados e um tipo para cada template. E finalmente chamo o
+                objeto que imrpimi os dados.
+            </p>
+            <pre>
+    <code>
+                        #include &lt;iostream&gt;
+                        using namespace std;
+                        #include &lt;string&gt;
+                        using std::string;
+                        
+                        <font color="gray">
+                        //=================================
+                        //--Clsse--</font>
+                        <font color="blue">
+                        template&lt;typename <font color="green">newType</font>, unsigned short <font color="green">U</font>&gt;</font>
+                        class minhaClasse
+                        {
+                        
+                        public:
+                            minhaClasse();
+                            void gravVetor();
+                            void mostraVetor();
+                        
+                        private:
+                        <font color="green">
+                            newType</font> vetor[10];
+                        
+                        
+                        };
+                        
+                        int main()
+                        {
+                            cout &lt;&lt; "Hello REAA!" &lt;&lt; endl;
+                        <font color="gray">
+                            //================================
+                            //--com int--</font>
+                            minhaClasse&lt;<font color="blue">int</font>, <font color="blue">2</font>&gt; m1;
+                            cout&lt;&lt;"inserindo valor do tipo int\n";
+                        <font color="gray">     //m1.mostraVetor();</font>
+                            m1.gravVetor();
+                            m1.mostraVetor();
+                            <font color="gray">
+                            //================================
+                            //--com double--</font>
+                            cout&lt;&lt;"inserindo valor do tipo double\n";
+                            minhaClasse&lt;<font color="blue">double</font>, <font color="blue">2</font>&gt; m2;
+                        <font color="gray">     //m2.mostraVetor();</font>
+                            m2.gravVetor();
+                            m2.mostraVetor();
+                            <font color="gray">
+                            //================================
+                            //--com char--</font>
+                            cout&lt;&lt;"inserindo valor do tipo char\n";
+                            minhaClasse&lt;<font color="blue">char</font>, <font color="blue">2</font>&gt; m3;
+                            <font color="gray">     //m3.mostraVetor();</font>
+                            m3.gravVetor();
+                            m3.mostraVetor();
+                        
+                            <font color="gray">
+                            //================================
+                            //--com string--</font>
+                            cout&lt;&lt;"inserindo valor do tipo string\n";
+                            minhaClasse&lt;<font color="blue">string</font>, <font color="blue">2</font>&gt; m4;
+                       <font color="gray">     //m4.mostraVetor();</font>
+                            m4.gravVetor();
+                            m4.mostraVetor();
+                        
+                        
+                        
+                            return 0;
+                        }
+                        
+                        <font color="gray">
+                        //=================================
+                        //--Desenvolvimento de funções--</font>
+                        <font color="blue">
+                        template&lt;typename <font color="green">newType</font>, unsigned short <font color="green">U</font>&gt;</font>   
+                        minhaClasse&lt;<font color="green">newType</font>, <font color="green">U</font>&gt;::minhaClasse()
+                        {
+                            for(int i=0; i&lt;<font color="green">U</font>; i++)
+                            {
+                                vetor[i]='\0';
+                            }
+                        
+                        
+                        }
+                        
+                        
+                        
+                        <font color="blue">
+                        template&lt;typename <font color="green">newType</font>, unsigned short <font color="green">U</font>&gt;</font> 
+                        void minhaClasse&lt;<font color="green">newType</font>, <font color="green">U</font>&gt;::gravVetor()
+                        {
+                            for(unsigned short i=0; i&lt;<font color="green">U</font>; i++)
+                            {
+                                cout&lt;&lt;"insira um numero: "&lt;&lt; '[' &lt;&lt; i&lt;&lt;'/'&lt;&lt;U&lt;&lt;']';
+                                cin&gt;&gt;vetor[i];
+                            }
+                        }
+                        
+                        <font color="blue">
+                        template&lt;typename <font color="green">newType</font>, unsigned short <font color="green">U</font>&gt;</font>  
+                        void minhaClasse&lt;<font color="green">newType</font>, <font color="green">U</font>&gt;::mostraVetor()
+                        {
+                            for(int i=0; i&lt;<font color="green">U</font>; i++)
+                            {
+                                cout&lt;&lt;":"&lt;&lt;vetor[i]&lt;&lt;endl;
+                            }
+                        
+                        }
+        
+    </code>
+</pre>
+            <figure class="Foto-AllanKay">
+                <img src="../_imagens/Screenshot from 2024-02-17 15-29-03.png" />
+                <figcaption>
+                    <img src="../_imagens/Screenshot from 2024-02-17 15-27-57.png" />
+                </figcaption>
+            </figure>
+            <p>
+                Este é um exemplo bastente simples para começar a entender sobre <em>Templates de funções e classes</em>
+                muito útil
+                em sistemas embarcados.
+
+
+            </p>
+
+        </section>
+        
+
+    </div>
+    
+</body>
+
+</html>

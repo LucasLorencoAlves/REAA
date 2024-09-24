@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/Conteudo.css">
+    <link rel="stylesheet" href="../_css/body.css">
+    <link rel="stylesheet" href="../_css/Estilo.css">
+
+    <title>REAA</title>
+
+</head>
+
+<body>
+    <div id="interface">
+
+        <header>
+            <h1></h1>
+            <h4></h4>
+        </header>
+        <nav id="menu">
+            <a href="#">Currículo</a>
+            <a href="Categorias.html">Categorias</a>
+            <a href="#">Open Source</a>
+            
+        </nav>
+        <section id="conf-aulas">
+
+            <div id="divclass">
+                <hgroup id="saudacoes">
+                    <h2>Instruções de controle</h2>                   
+                </hgroup>
+               
+                    <br>
+                    <br>
+                <p>
+                    Antes de escrever um programa de computador, é preciso entender o problema proposto, mantendo
+                    atenção especial à lógica que será utilizada para criar um mecanismo específico capaz de apresentar
+                    o resultado desejado. Frequentemente, para atingir esse objetivo, é necessário criar blocos de
+                    controle de decisão ou blocos que se repetem até que uma determinada condição seja alcançada. Esses
+                    elementos estruturais são essenciais para controlar o fluxo do programa, permitindo que este
+                    responda de maneira apropriada às diferentes situações que podem surgir durante a execução. A
+                    habilidade de utilizar adequadamente estruturas de controle, como condicionais e loops, é crucial
+                    para desenvolver programas eficientes e funcionais, garantindo que a lógica do código seja robusta e
+                    capaz de lidar com uma variedade de cenários.
+                </p>
+                <p>
+
+                    Em todas as linguagens de programação, existem as instruções de controle, as quais são essenciais
+                    para direcionar o fluxo de execução do programa. São elas:<br><br>
+                    <b>Controle de decição: </b><br>
+                    <em> if() </em><br>
+                    <em></em> if..else </em><br>
+                    <em></em> if..else if..else if..else </em><br>
+                    <em> switch..case </em><br><br>
+                    <b> Controle de repetição(famosos loop's):</b> <br>
+                    <em> for() </em><br>
+                    <em> while() </em><br>
+                    <em>do..while() </em><br>
+                    </pre>
+
+                </p>
+                <p>
+                    O controle de decição mais simples e mais usado é o <em>if(..condição..)</em>. È sem dúvida
+                    o controle mais diário que temos em nossas vidas <br>
+                    Ex: <em>"Se ele não vier, então eu não vou"</em> <br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>"Se estiver chovendo, então eu levo guarda-chuva"</em><br>
+                    E, assim segue o baile.
+                </p>
+                <b>Estrutura básica do código if(..condição..).</b>
+                <p>
+                <pre>
+                    <code>
+                        #include &lt;iostream&gt;
+                        using namespace std;
+                        int main()
+                        {
+                            if(..coondição..)
+                              ..bloco de código se <b>caso a condição for verdadeira</b>..
+                        ..bloco de codigo, <b>caso não seja a condição esperada</b> ..
+                                     
+                                         OU
+                        if(..coondição..)
+                        ..bloco de código se <b>caso a condição for verdadeira</b>..
+                        ..bloco de codigo, <b>caso não seja a condição esperada</b> ..
+                            
+                            return 0;
+                        }
+                    </code>
+                   </pre>
+                </p>
+                <p>
+                    Na primeira forma, vemos o bloco de código abaixo do if formatado com um tab a direita
+                    e isso significa que, se a condição estabelicida como argumento dentro dos parenteses do if, for
+                    verdadeira,
+                    a primeira linha após o if será executada, senão a segunda linha será executada. E isso tanto faz
+                    para a primeira ou segunda forma representada no trecho de código acima.
+                </p>
+                <p>
+                    A condição que é estabelicida dentro do if é sempre verdadeira, ou seja o compilador sempre vai
+                    analizar se é TRUE.
+                </p>
+                <p>
+                    Porém! quando, há necessidade de mais de uma linha de código, caso a condição for verdadeira. Ela
+                    será delimitadade dentro de chaves
+                    como segue o exemplo abaixo.
+                </p>
+                <pre>
+                    <code>
+                        #include &lt;iostream&gt;
+                        using namespace std;
+                        int main()
+                        {
+                            if(..coondição..)
+                            {
+                              ..bloco 1 de código se <b>caso a condição for verdadeira</b>..
+                              ..bloco 2 de código se <b>caso a condição for verdadeira</b>..
+                              ..bloco n de código se <b>caso a condição for verdadeira</b>..
+                            }
+                        ..bloco de codigo, <b>caso não seja a condição esperada</b> ..
+                                     
+                            
+                            return 0;
+                        }
+                    </code>
+                   </pre>
+
+                <b>Estrutura básica do código if-else</b>
+                <p>
+                    Existe a condição <b>else</b> para representar o "senão", mas para o caso acima é opcional. Já que o
+                    compilador entenderá que, se nenhuma das opções dentro do if é verdadeira, então vou executar o que
+                    está do lado
+                    de fora.
+                </p>
+                <p>
+                    O else tem uma utilidade muito forte para exercer uma condição de <em>default</em> para mencionar ao
+                    usuário uma menssaem de
+                    erro.
+                </p>
+                <pre>
+                    <code>
+                        #include &lt;iostream&gt;
+                        using namespace std;
+                        int main()
+                        {
+                            if(..condição..)
+                            {
+                              ..bloco 1 de código se <b>caso a condição for verdadeira</b>..
+                              ..bloco 2 de código se <b>caso a condição for verdadeira</b>..
+                              ..bloco n de código se <b>caso a condição for verdadeira</b>..
+                            }
+                           <b>else</b>
+                              cout&lt;&lt;"Algo deu errado, jovem"&lt;&lt;endl;
+                                     
+                            
+                            return 0;
+                        }
+                    </code>
+                   </pre>
+                <b>Estrutura básica do código if..else if..else if..else</b>
+                <p>
+                    Quando se usa apenas um if, não tem o porque usar o else afinal seja prático e simples no seu
+                    código.
+                    Veremos agora uma cascata de <em>if..else if..else</em> em C++. A baixo tem um código didático,
+                    representando
+                    uma cascata de condições
+                    if-else. Começando com uma variável 'A' do tipo de dado inteiro e atribuindo um valor 4 do
+                    mesmo tipo.
+                    vamos ter em mente que: <br>
+                    <br>
+                    1° O comilador sempre vai analizar o primeiro if, depois o segundo e assim por diante. <br>
+                    2° O compilador sempre vai esperar que a condição seja verdadeira, e não que seja falsa.
+                    por isso, se caso precisa que um bloco de código seja executado caso a seja falsa, deverá usar
+                    o operador de negação '&#33;' (exclamação), tente você mesmo.
+                </p>
+                <pre>
+                    <code>
+                        #include &lt;iostream&gt;
+                            using namespace std;                            
+                            int main()
+                            {
+                                cout &lt;&lt; "Hello world!" &lt;&lt; endl;
+                                int A=4;
+                            
+                                if(A==4)
+                                    cout&lt;&lt;"4"&lt;&lt;endl;
+                             &#10145; <b>else if</b>(A==3)
+                                    cout&lt;&lt;"3"&lt;&lt;endl;
+                             &#10145; <b>else if</b>(A==2)
+                                    cout&lt;&lt;"2"&lt;&lt;endl;
+                             &#10145; <b>else if</b>(A==1)
+                                    cout&lt;&lt;"1"&lt;&lt;endl;
+                                else
+                                    cout&lt;&lt;"Nao foi desta vez"&lt;&lt;endl;
+                                return 0;
+                            }
+                    </code>
+                   </pre>
+                <b>Estrutura básica do código switch..case</b>
+                <p>
+                    Dentro do conceito de instruçoes de controle, temos ainda o switch-case. Ele faz um chaveamento da
+                    condição que está dentro
+                    dos parenteses do switch com os <em>case</em> que formam o bloco de intruções, e os <em>break</em>
+                    faz pular fora de todo o switch. Esperimente jogar o
+                    código abaixo
+                    no code-blocks para ver o resultado.
+                </p>
+                <pre>
+                    <code>
+                        #include &lt;iostream&gt;
+                            using namespace std;
+
+                            int main()
+                            {
+                                cout &lt;&lt; "Hello REAA!" &lt;&lt; endl;
+                                int A=0;
+                            
+                                cout&lt;&lt;"insira um valor inteiro:";
+                                cin&gt;&gt;A;
+                            
+                                switch(A)
+                                {
+                                case 8:
+                                     cout&lt;&lt;"Vc digitou 8"&lt;&lt;endl;
+                                    break;
+                                case 5:
+                                    cout&lt;&lt;"Vc digitou 5"&lt;&lt;endl;
+                                    break;
+                                case 7:
+                                    cout&lt;&lt;"Vc digitou 7"&lt;&lt;endl;
+                                    break;
+                                default:
+                                    cout&lt;&lt;"nenhuma condicao"&lt;&lt;endl;
+                                }
+                            
+                                return 0;
+                            }
+                            
+                    </code>
+                   </pre>
+                <p>O mesmo pode ser feito com caracteres em vez de número:</p>
+                <pre>
+                    <code>
+                        #include &lt;iostream&gt;
+                            using namespace std;
+
+                            int main()
+                            {
+                                cout &lt;&lt; "Hello REAA!" &lt;&lt; endl;
+                                char A='\0';
+                            
+                                cout&lt;&lt;"insira um valor inteiro:";
+                                cin&gt;&gt;A;
+                            
+                                switch(A)
+                                {
+                                 <em>case 'A': </em>
+                                 <em>case 'a':</em>
+                                     cout&lt;&lt;"Vc digitou A ou a"&lt;&lt;endl;
+                                    break;
+                                 <em>case '5':</em>
+                                    cout&lt;&lt;"Vc digitou 5"&lt;&lt;endl;
+                                    break;
+                                 <em>case 'B':</em>
+                                 <em>case 'b':</em>
+                                    cout&lt;&lt;"Vc digitou B ou b"&lt;&lt;endl;
+                                    break;
+                                default:
+                                    cout&lt;&lt;"nenhuma condicao, entendeu a grande utilidade do dafault?"&lt;&lt;endl;
+                                }
+                            
+                                return 0;
+                            }
+                            
+                    </code>
+                   </pre>
+                <b>Apenas intruções de controle não deixam nosso código eficaz...laço for()</b>
+                <p>
+                    Apenas instrucoes-de-controle não basta para deixar um programa otimizados e robusto. Você precisa
+                    usar os laços de repetição para monitorar, condições até que elas sejam aceitas ou que sejam capazes
+                    de calcular
+                    <em>n vezes</em> a nível do clock da máquina;
+                </p>
+                <p>
+                    Vamos começar com o laço de repetição <em>for()</em> que sem dúvidas, além de ser mais fácil,
+                    é com ele que entendemos melhor os outros loops. <br>
+                    O for é frequentemente utilizado quando o número de iterações é conhecido antecipadamente ou quando
+                    é necessário iterar sobre uma sequência específica de valores. A inicialização ocorre uma vez no
+                    início, a condição é avaliada a cada iteração, e a expressão de incremento/decremento é executada
+                    após cada iteração.
+                </p>
+
+                <figure class="Foto-Relogio">
+                    <img src="../_imagens/Pseudocodigo.PNG" />
+                    <figcaption>
+                        <h5>
+                            Demostração dos parametros <br>
+                            do laço for()
+                        </h5>
+                    </figcaption>
+                </figure>
+
+                <figure class="Foto-Relogio">
+                    <img src="../_imagens/Resultado_laco_for.PNG" />
+                    <figcaption>
+                        <h5>
+                            Console do code-blocks <br>
+                            A string REEA, é mostrado 10x
+                        </h5>
+                    </figcaption>
+                </figure>
+
+
+                <p>
+                    Vamos agora de aluno para aluno, examinar o laço <em>for()</em>. Este tipo de controle em forma de
+                    repetição carrega como argumento(o que vai dentro dos parênteses) três
+                    parâmetros(valores de entrada que definem a função) separados por ponto e virgula "&#59;".
+                </p>
+                <pre>
+                    <code>
+                        para(inicialização: Condição; passo)
+                          corpo ou bloco
+                        fimpara
+                        
+                        próxima instrução
+                    </code>
+                   </pre>
+                <p>
+                    Você pode omitir a inicialização de dentro do laço, mas deverá declarar ele fora do laço e antes
+                    dele. Lembrando
+                    que toda linguagem de programação é compilada de cima para baixo e da direita para esquerda.
+                    Então se não declarar a variavel antes, ocorrerá erro de sintaxe no código. <br>
+                    &#10004;inicialização, usado para dar a condição de onde quer começar a contar ou iniciar os
+                    cálculos. <br>
+                    &#10004;codição, uma condição é o que determina a essencia da do trexo de código. <br>
+                    &#10004;passo, é a expressão que determina que será feito a cada passo que é repetido, normalmente é
+                    usado
+                    a expressão de incrimento ou decremento.
+
+                </p>
+                <p>
+                    Você pode utilizar de muitas formas a parte de <em>condição</em>, podendo utiliar conceitos de
+                    relação entre dois valores
+                    ou até mesmo criar um laço infinito deixando em branco os parâmetros.
+                <pre>
+                    <code>
+                        for(int i=0; i!=44; i++)
+                        for( ; ;)
+                        for(int i=100; i!=0; i--) 
+                    </code>
+                   </pre>
+                </p>
+                <b>Apenas intruções de controle não deixam nosso código eficaz..laço while()</b>
+                <p>
+                    O laço while é outra maneira de controlar um bloco de código que precisa ser verificado até que a
+                    condição seja verdadeira
+                    ou que seja preciso calcular um valor repetidas vezes. O while é usado quando a condição para
+                    continuar o loop não é conhecida antecipadamente e pode depender de entradas do usuário ou de
+                    cálculos dentro do próprio loop. A condição é avaliada antes de cada iteração, e o loop continua
+                    enquanto a condição for verdadeira.
+                </p>
+                <pre>
+                    <code>
+                        while (condição) {
+                           ...código a ser repetido
+                        }
+                        <br>
+                        ou
+                        <br>
+                        int i = 1;
+                        while (i <= 5) {
+                            ...Código a ser repetido
+                            ++i;
+                        }
+                        
+                    </code>
+                   </pre>
+                <h5>Exemplo:</h5>
+                <figure class="Foto-Relogio">
+                    <img src="../_imagens/while02.PNG" />
+                    <figcaption>
+                        <h5>
+                            Console do code-blocks <br>
+                            A string REEA, é mostrado 10x
+                        </h5>
+                    </figcaption>
+                </figure>
+                <p>
+                    Observa que como parâmetro do while é uma negação. Ou seja, sairei do código somente se eu digitar
+                    's' para sair e qualquer
+                    outra tecla que eu bater, ficarei preso dentro do código testando inúmeras vezes meu comando
+                    switch-case. O comando system("CLS")
+                    é utilizado para limpar a tela do console. Experimente você mesmo.
+                </p>
+
+                <b>Apenas intruções de controle não deixam nosso código eficaz..laço do-while();</b>
+                <p>
+                    O do-while é outra estrutura de controle de fluxo em C++ usada para implementar loops (laços de
+                    repetição). Ele é semelhante ao while, mas com uma diferença crucial: no do-while, a condição é
+                    avaliada após a execução do bloco de código, garantindo que o bloco seja executado pelo menos uma
+                    vez, independentemente da condição inicial.
+                </p>
+                <pre>
+                    <code>
+                        do {
+                            ..código a ser repetido
+                        } while (condição);
+                    </code>
+                   </pre>
+                <p>
+                    O propósito do-while é útil quando o bloco de código precisa ser executado pelo menos uma vez, e a
+                    verificação
+                    da condição pode ser feita após a execução. Isso é especialmente útil em situações em que é
+                    necessário garantir que um bloco de código seja executado antes mesmo de verificar uma condição.
+                    exemplo de uso muito comun, é a criação de um menu, ao qual é peciso que rode ao menos uma vez antes
+                    de solicitar
+                    a opção.
+                </p>
+                <h4>Exemplo:</h4>
+                <pre>
+                    <code>
+                        #include &lt;iostream&gt;
+
+                            using namespace std;
+                            
+                            int main()
+                            {
+                                cout &lt;&lt; "Hello REAA" &lt;&lt; endl;
+                                int sair=0;
+                                int op=0;
+                                do
+                                {
+                                    cout&lt;&lt;"[1]opcao A"&lt;&lt;endl;
+                                    cout&lt;&lt;"[2]opcao B"&lt;&lt;endl;
+                                    cout&lt;&lt;"[3]opcao C"&lt;&lt;endl;
+                                    cin>>op;
+                                    system("CLS");
+                                }
+                                while(op!=1 && op!=2 && op!=3);
+                                cout&lt;&lt;"vc optou por["&lt;&lt;op&lt;&lt;"]"&lt;&lt;endl;
+                            
+                                return 0;
+                            }                            
+                    </code>
+                   </pre>
+                <p>
+                    O código acima, mostra um exemplo de um menu iterativo. Dentro do argumento while tem três condiçoes
+                    que obriga o usuário a digitar infinitamente uma das opções, fazendo uso do operador lógico
+                    <em>&&(and)</em>
+                    determino que a variavel <em>op</em> será 1, 2 ou 3. Eu sei! você acha que deveria ser o operador
+                    lógico <em>||(ou)</em>
+                    .Tenta você mesmo, nada melhor que treinar para aprender. O lance, desse menu acima é que a variável
+                    <em>op</em>
+                    sai do laço já atribuído com o valor escolhido, legal néh?
+                </p>
+                <hgroup id="saudacoes">
+                    <h2>Conclusões finais</h2>
+                </hgroup>
+                <p>
+                    Instruções de controle em laços de repetição são essenciais para criar fluxos de execução flexíveis
+                    e dinâmicos em programas. Os laços de repetição, como for, while e do-while, permitem que um bloco
+                    de código seja executado repetidamente enquanto uma condição específica é atendida. A utilização de
+                    instruções de controle nesses laços serve a diversas finalidades:
+                </p>
+                <b> Automatização de Tarefas: </b><br>
+                <p>
+                    Permite a automação de tarefas repetitivas, onde o mesmo conjunto de operações precisa ser executado
+                    várias vezes.
+                </p>
+
+                <b>Manipulação de Dados em Massa:</b><br>
+                <p>
+                    Facilita o processamento de grandes conjuntos de dados, permitindo que operações sejam aplicadas a
+                    cada elemento do conjunto.
+                </p>
+
+                <b>Iteração sobre Sequências:</b><br>
+                <p>
+                    Possibilita a iteração sobre sequências, como arrays ou listas, para processar cada elemento
+                    individualmente.
+                </p>
+                <b>Implementação de Lógica de Controle:</b><br>
+                <p>
+                    Oferece uma maneira de implementar lógica de controle condicional dentro do laço, decidindo quando
+                    continuar ou encerrar as iterações.
+                </p>
+                <p>
+                    Em resumo, instruções de controle com laços de repetição são fundamentais para criar programas mais
+                    flexíveis, eficientes e adaptáveis, lidando com a repetição de tarefas e respondendo dinamicamente
+                    às mudanças nas condições do programa.
+                </p>
+            </div>
+        </section>
+        
+
+    </div>
+    
+</body>
+
+</html>

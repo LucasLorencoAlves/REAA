@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/Conteudo.css">
+    <link rel="stylesheet" href="../_css/body.css">
+    <link rel="stylesheet" href="../_css/Estilo.css">
+
+    <title>REAA</title>
+
+</head>
+
+<body>
+    <div id="interface">
+
+        <header>
+            <h1></h1>
+            <h4></h4>
+        </header>
+        <nav id="menu">
+            <a href="#">Currículo</a>
+            <a href="Categorias.html">Categorias</a>
+            <a href="#">Open Source</a>
+            
+        </nav>
+        <section id="conf-aulas">
+            <hgroup id="saudacoes">
+                <h2>Herança.</h2>
+                <br>
+                <br>
+            </hgroup>
+            <p>
+                A herança é um conceito fundamental na programação orientada a objetos (POO) que permite a criação
+                de hierarquias de classes, facilitando a reutilização de código e a modelagem de relacionamentos
+                entre objetos. Em C++, a herança é implementada por meio da palavra-chave class e do modificador
+                public ou private, determinando a visibilidade dos membros da classe base nas classes derivadas.
+            </p>
+            <p>
+                A classe base é a classe principal na hierarquia e serve como um modelo para as classes derivadas.
+                Ela contém atributos e métodos que são compartilhados por todas as classes que herdam dela. As
+                classes derivadas, por sua vez, herdam esses membros e podem adicionar novos membros ou modificar o
+                comportamento existente.
+            </p>
+            <p>
+                Existem diferentes tipos de herança em C++, incluindo herança pública, privada e protegida. Na
+                herança pública, os membros públicos da classe base permanecem públicos nas classes derivadas. Na
+                herança privada, os membros públicos e protegidos da classe base tornam-se privados nas classes
+                derivadas. Já na herança protegida, os membros públicos e protegidos da classe base tornam-se
+                protegidos nas classes derivadas.
+            </p>
+            <p>
+                Além disso, C++ suporta herança múltipla, onde uma classe pode herdar de mais de uma classe base.
+                Isso proporciona uma flexibilidade adicional na modelagem de relacionamentos complexos entre
+                classes.
+            </p>
+            <figure class="Foto-Relogio">
+                <img src="../_imagens/Herança01.PNG" />
+                <figcaption>
+                    <h5>
+                        Filhos herdam caracteristicas do pai
+                    </h5>
+                </figcaption>
+            </figure>
+            <p>
+                Estude o código abaixo, pois ele mostra a construção ideal uma classe básica(pai) e uma classe
+                derivada(filho). Ou seja
+                a classe derivada herda caracteristicas da classe básica. Ou ponto importante é a forma como o
+                construtor pode inicializar os membros de dados
+                da classe(vasculhe o código para aprender a olhar para um programa feito por outra pessoa). O
+                contrutor pode ser inicializado tanto na forma
+                apresentada no construtor da classe básica quanto na forma da classe derivada.
+            </p>
+            <pre>
+            <code>
+                 
+<article id="prototypeFunction">                 
+#include &lt;iostream&gt;
+using namespace std;
+</article>
+<article id="prototypeFunction">
+<font color="gray">
+//===========================================
+//--classe básica--
+</font>
+        class Aeronaves
+        {
+                
+        public:
+            Aeronaves(int=0, string="", string="", string="");<font color="gray">//cnt</font>
+                
+            void setNumeroPassageiros(int);
+            int  getNumeroPassageiros();
+                
+            void setNomeAeronave(string);
+            string  getNomeAeronave();
+                    
+            void   setTipoAeronave(string);
+            string getTipoAeronave();
+                  
+            void   setHibrido(string);
+            string getHibrido();
+                    
+        private:
+            int _Npassageiros;
+            string _TipoAeronave;
+            string _Hibrido;
+            string _NomeAeronave;
+                  
+        };<font color="gray">//Fim classe Aeronaves</font>
+</article>
+
+<article id="prototypeFunction">
+<font color="gray">
+        //===========================================
+        //--classe Derivada--
+</font>            
+        class fokker:public Aeronaves
+        {
+        public:
+            fokker(float=0.0, int=0, string="", string="", string="");<font color="gray">//cnt</font>
+                   
+            void  setvelocidade(float);
+            float getvelocidade();
+                
+            void display();<font color="gray">//mostra as informações</font>                       
+                    
+        private:
+            float _velocidade;
+                    
+        };<font color="gray">//Fim da classe fokker</font>
+</article>        
+<article id="prototypeFunction">            
+        int main()
+        {
+             cout &lt;&lt; "Hello world!" &lt;&lt; endl;
+                    <font color="gray">//objeto</font>
+                    fokker M5;<font color="gray">//crio um objeto M5, instanciado da classe fokker</font>
+                    M5.setNumeroPassageiros(151);<font color="gray">//seto o numero de passageiros</font>
+                    M5.setHibrido("Nao");<font color="gray">//seto o a informação de é hibrido ou não</font>
+                    M5.setTipoAeronave("Comercial");<font color="gray">//seto a classificação dele</font>
+                    M5.setvelocidade(900.0);<font color="gray">//seto a velocidade</font>
+                    M5.setNomeAeronave("Fokker100");<font color="gray">//seto o nome</font>
+                    M5.display();<font color="gray">//nesta função-membro uso para mostrar todas as informações</font>
+                  
+                    cout&lt;&lt;"\n"&lt;&lt;endl;<font color="gray">//crio um espaço</font>
+                    <font color="gray"> 
+                    //Crio outro objeto chamado spin instanciado da classe fokker
+                    //velocidade menor que 850.0 então é setado para 850.0</font>                        
+                    fokker spin(10.1, 1, "Combate", "Nao", "Fokker_spin");
+                    spin.display();<font color="gray">//Mostro as info.</font>
+                    
+                     return 0;
+                }
+</article>                       
+
+<article id="prototypeFunction"> 
+<font color="gray">
+                   
+                //===========================================
+                //--Desenvolvimento das funçoes da classe básica--
+                //--Construtor--
+                //--Posso usar esta forma de inicialização dos atributos---
+</font>
+                Aeronaves::Aeronaves(int Npassageiro, string TipoAeronave, string Hibrido, string nome)
+                {
+                    _Npassageiros=Npassageiro;
+                    _TipoAeronave=TipoAeronave;
+                    _Hibrido=Hibrido;
+                    _NomeAeronave=nome;
+                }
+                void Aeronaves::setNumeroPassageiros(int passgeiros)<font color="gray">//seto o numero de passageiros restringindo o minímo</font>
+                {
+                    
+                <font color="gray">//uso o perador ternário para evitar de usar o if-else</font>
+                    _Npassageiros=(passgeiros &lt;0 && 340 ? 0: passgeiros);
+                }
+                int Aeronaves::getNumeroPassageiros()<font color="gray">//retorno o atributo.</font>
+                {
+                    return _Npassageiros;
+                }
+                void Aeronaves::setNomeAeronave(string nome)<font color="gray">//seto o nome a aeronave</font>
+                {
+                    _NomeAeronave=nome;
+                }
+                string Aeronaves::getNomeAeronave()<font color="gray">//devolvo o atributo inicializado</font>
+                {
+                    return _NomeAeronave;
+                }
+                        
+                void  Aeronaves::setTipoAeronave(string TipoAero)<font color="gray">//seto o tipo de aeronave</font>
+                {
+                    _TipoAeronave=TipoAero;
+                }
+                string Aeronaves::getTipoAeronave()<font color="gray">//devolvo o atributo inicializado</font>
+                {
+                    return _TipoAeronave;
+                }
+                void  Aeronaves::setHibrido(string Hib)<font color="gray">//seto se é hibrido</font>
+                {
+                    _Hibrido=Hib;
+                }
+                string Aeronaves::getHibrido()<font color="gray">//devolvo o atributo inicializado</font>
+                {
+                    return _Hibrido;
+                }
+                <font color="gray">
+                //===========================================
+                //--Fim Desenvolvimento das funçoes da classe básica--</font>
+</article>                       
+
+
+<article id="prototypeFunction">  
+<font color="gray">
+                //===========================================
+                //--Desenvolvimento das funçoes da classe Derivada--                    
+                //Ou posso atilizar esta forma para inicializar os membros de dados através do construtor
+</font>
+                fokker::fokker(float velocidade, int passageiros, string tipoAeronaves, string hibrido, string nome):
+                _velocidade(velocidade&lt;850.0? 850.0: velocidade),
+                Aeronaves(passageiros, tipoAeronaves, hibrido, nome)<font color="gray">//chamo construtor da classe básica para inicializar
+                //os membros de dados</font>
+                {
+                    <font color="gray">//vazio por que os membros de dados estãoinicializados acima.</font>
+                }
+                void fokker::setvelocidade(float velo)
+                {
+                    _velocidade=(velo &lt; 850.0 ? 850.0: velo);<font color="gray">//restrinjo os valores através do operador ternário</font>
+                }
+                float fokker::getvelocidade()<font color="gray">//retorno a velocidade</font>
+                {
+                    return _velocidade;
+                }
+                <font color="gray">                    
+                //cada fnção-membro get retorna o atributo inicializado
+                //Então posso usar na saido de fluxo de dados (cout)
+                </font>
+                void fokker::display()<font color="gray">//mostro os dados</font>
+                {
+                    cout&lt;&lt;"Nome da aeronave:....."&lt;&lt;getNomeAeronave()&lt;&lt;endl;
+                    cout&lt;&lt;"N.Passageiros:.."&lt;&lt;getNumeroPassageiros()&lt;&lt;endl;
+                    cout&lt;&lt;"Tipo Aeronave:.."&lt;&lt;getTipoAeronave()&lt;&lt;endl;
+                    cout&lt;&lt;"Hibrido:........"&lt;&lt;getHibrido()&lt;&lt;endl;
+                    cout&lt;&lt;"velocidade:....."&lt;&lt;getvelocidade()&lt;&lt;endl;
+                }
+<font color="gray">      
+                //===========================================
+                //--Fim Desenvolvimento das funçoes da classe Derivada--
+</font>
+</article>          
+
+                </code>
+            </pre>
+            
+        </section>
+        
+
+    </div>
+    
+</body>
+
+</html>

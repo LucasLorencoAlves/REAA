@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/Conteudo.css">
+    <link rel="stylesheet" href="../_css/body.css">
+    <link rel="stylesheet" href="../_css/Estilo.css">
+
+    <title>REAA</title>
+
+</head>
+
+<body>
+    <div id="interface">
+
+        <header>
+            <h1></h1>
+            <h4></h4>
+        </header>
+        <nav id="menu">
+            <a href="#">Currículo</a>
+            <a href="Categorias.html">Categorias</a>
+            <a href="#">Open Source</a>
+            
+        </nav>
+        <section id="conf-aulas">
+
+            <div id="Aulas">
+                <div id="Aulas">
+                    <hgroup id="saudacoes">
+                        <h2>Modelo</h2>
+                    </hgroup>
+                    <br>
+                    <br>
+                    <p>
+                        A pesquisa binária é um jeito esperto e eficiente de procurar um
+                        item dentro de uma lista que já está organizada. Imagina que você tem
+                        uma lista de números ou de qualquer outra coisa que já está em ordem crescente
+                        ou decrescente. Em vez de procurar item por item, você vai cortando a lista
+                        pela metade até encontrar o que está procurando. É tipo um "Vamo logo pra
+                        parte que interessa!" da programação.
+                    </p>
+
+                    <hgroup id="saudacoes">
+                        <h2>Como Funciona a Pesquisa Binária</h2>
+                    </hgroup>
+                    <br>
+                    <hgroup id="saudacoes">
+                        <h2>Divide e Conquista:</h2>
+                    </hgroup>
+
+                    <p>Primeiro, você pega o meio da lista.
+                        Se o número que você está procurando
+                        for menor que o do meio, você ignora a
+                        parte da frente e foca só na parte de trás (ou vice-versa).</p>
+
+                    <hgroup id="saudacoes">
+                        <h2>Repetir até Encontrar:</h2>
+                    </hgroup>
+                    <p>Vai repetindo isso, dividindo a
+                        lista ao meio, até achar o número que
+                        você quer ou até sobrar nada pra procurar
+                        (aí você sabe que o número não está na lista).
+                    </p>
+                    <img src="PesquisaBinariaImg.png" />
+
+                    <p>
+                        A baixo está um código simples para similar a divisão susseciva até encontrar o valor da chave.
+                        Dentro do comando <bold>while</bold> está a as três condições que rege o algoritimo,
+                        se a chave é maior que o centro, então o inicio do vetor é deslocado para a direita
+                        se caso a chave é menor então o fim é deslocado para a esquerda. Fazendo assim até que o centro seja igual a chave pesquisada.
+                         
+                    </p>
+                        
+                    <pre>
+                        <code>
+                            #include &lt;iostream&gt;
+        
+                                using namespace std;
+                                
+                                int main()
+                                {
+                                    cout &lt;&lt; "Hello world!" &lt;&lt; endl;
+                                
+                                    int vetor[]={14, 20, 32, 47, 55, 63, 71, 89};
+                                
+                                    for(int i=0;  i<7; i++)
+                                    {
+                                
+                                        cout &lt;&lt; " &gt;&gt; "  &lt;&lt; i &lt;&lt; endl;
+                                    }
+                                
+                                    int indice=-1,
+                                        Fim_vetor=8,
+                                        Ini_Vetor=0,
+                                        Centro=(Fim_vetor - Ini_Vetor)/2,
+                                        chave=89;
+                                
+                                
+                                    while( (Ini_Vetor &lt;= Fim_vetor) && indice ==-1 )
+                                    {
+                                        if( chave == vetor[Centro])
+                                            indice=Centro;
+                                        else if(chave &lt;= vetor[Centro])
+                                            Fim_vetor=Centro-1;
+                                        else
+                                            Ini_Vetor=Centro+1;
+                                
+                                    Centro=(Ini_Vetor + Fim_vetor)/2;
+                                
+                                    }
+                                
+                                    cout&lt;&lt;"Encontrado: " &lt;&lt; indice &lt;&lt; " na posicao " &lt;&lt; endl;
+                                
+                                
+                                    return 0;
+                                }
+                                
+                        </code>
+                    </pre>
+
+                </div>
+            </div>
+
+            
+        </section>
+        
+
+    </div>
+    
+</body>
+
+</html>

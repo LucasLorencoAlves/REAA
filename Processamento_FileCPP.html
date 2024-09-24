@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/Conteudo.css">
+    <link rel="stylesheet" href="../_css/body.css">
+    <link rel="stylesheet" href="../_css/Estilo.css">
+
+    <title>REAA</title>
+
+</head>
+
+<body>
+    <div id="interface">
+
+        <header>
+            <h1></h1>
+            <h4></h4>
+        </header>
+        <nav id="menu">
+            <a href="#">Currículo</a>
+            <a href="Categorias.html">Categorias</a>
+            <a href="#">Open Source</a>
+            
+        </nav>
+        <section id="conf-aulas">
+
+            <div id="Aulas">
+                <div id="Aulas">
+                    <hgroup id="saudacoes">
+                        <h2>Processamento de Arquivos .txt e .csv</h2>
+                    </hgroup>
+                    <br>
+                    <br>
+                    <p>
+                        Essa parte de processamento ou manipulação de arquivos, digo eu que é a parte mais prazerosa
+                        desta jornada. Pois é possível armazenar
+                        dados mesmo depois de fechar o programa. Também é possivél ler os dados armazenados nele. O
+                        melhor de tudo,
+                        é o gosto de colocar tudo em prática o que já foi aprendido pra dentro do arquivo só pra ver ele
+                        armazenado.
+                    </p>
+
+                    <p>
+                        A sintaxe da manipulação de arquivos é o que segue a baixo, e com esta pequena construção você
+                        pode criar outros arranjos
+                        de programa.
+                    </p>
+                    <p>
+                        Primeiramente, vou começar armazenando num arquivo .txt ou seja <font color="gray">
+                            <em>escrevendo</em>
+                        </font> num arquivo, que é um bloco de notas
+                        qualquer, depois vou
+                        armazenar dados num arquivo .csv que é a planilha do Exel. E você vai ver que além de deferente
+                        é mais organizado.
+                    </p>
+
+                    <pre>
+                    <code>
+                            #include &lt;iostream&gt;
+                            using namespace std;
+                            
+                            #include &lt;cstdlib&gt;
+                            using std::exit;
+                            
+                            #include &lt;iomanip&gt;
+                            using std::setw;
+                            
+                            #include &lt;fstream&gt;
+                            using std::ofstream;//para trabalhar com arquivos
+                            
+                            
+                            int main()
+                            {
+                                <font color="gray">//Boas vindas</font>
+                                cout &lt;&lt; "Hello REAA!" &lt;&lt; endl;
+                            
+                                float resultado=60;
+                                <font color="gray">//Gera o arquivo se caso não existir.</font>
+                                <font color="green">ofstream Arquivo("Arquivo.txt", ios::out);</font>
+                                <font color="gray">//Verifica se o arquivo foi aberto com exidô</font>
+                                if(!Arquivo)
+                                {
+                                    cout &lt;&lt; "Sem sucesso ao abrir o arquivo:" &lt;&lt; endl;
+                                    exit(1);<font color="gray">//Aborta o programa, se caso não rolar.</font>
+                                }
+                            
+                                cout &lt;&lt; "Arquivo aberto com sucesso: " &lt;&lt; endl;
+                            
+                                Arquivo &lt;&lt;resultado &lt;&lt; setw(3) &lt;&lt; "Hz" &lt;&lt; "Padrão Brazil." &lt;&lt;endl;
+                                Arquivo &lt;&lt; "======================";
+                            
+                                Arquivo.close();<font color="gray">//Fecha o arquivo</font>
+                                while(1);
+                                return 0;
+                            }
+                            
+                    </code>
+                </pre>
+                    <p>
+                        Usamos o objeto <em>ofstream</em> para especificar a saida de dados e ir direto para dentro de
+                        um arquivo, ou seja, <font color="gray"><em>Out File Stream</em></font>
+                        .Pensa que <em>ofstream</em> é o <em>cout &lt;&lt;</em> mas em vez de ser mostrado no console, é
+                        mostrado dentro de um arquivo cuja extensão você mesmo definiu.
+
+                    <figure class="Foto-AllanKay">
+                        <img src="../_imagens/saidaDadosArquivoComSeta.PNG" />
+                        <figcaption>
+                            <img src="../_imagens/saidaDadosArquivoResultado.PNG" />
+                        </figcaption>
+                        </p>
+
+                </div>
+                <p>
+                    Agora vejamos com arquivo .csv, nota-se que no arquivo .csv, as células da planilha é
+                    separada por
+                    vírgula ou ponto e vírgula, coisa que não dá pra ver na própria planilha.
+                </p>
+                <figure class="Foto-AllanKay">
+                    <img src="../_imagens/ArquivoCSV.png" />
+                    <figcaption>
+                        <img src="../_imagens/ArquivoCSVAberto.PNG" />
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Para finalizar esta parte de escrita em arquivo, deixo outro codigo de exemplo para inspirar a
+                    prática.
+                    O código abaixo é uma adaptação do código acima com inclusão de data e hora, e um if-else dentro do
+                    while
+                    para alterar o status do log de registro de um sensor hipotético. Caso a temperatura e nivel
+                    estiverem
+                    acima de 5
+                    o status muda para ON.
+                </p>
+                <pre>
+                <code>
+                #include &lt;iostream&gt;
+                using std::cout;
+                using std::cin;
+                using std::endl;
+                using std::ios;
+                
+                #include &lt;cstdlib&gt;
+                using std::exit;
+                
+                #include &lt;fstream&gt;
+                using std::ofstream;
+                
+                #include &lt;ctime&gt;
+                using namespace::std;
+                
+                
+                int main()
+                {
+                    cout &lt;&lt; "Hello REAA!" &lt;&lt; endl;
+                    cout &lt;&lt; "Log de registro de um device" &lt;&lt; endl;
+                    cout &lt;&lt; "Temperatura - Nível" &lt;&lt; endl;
+                    int temperatura =0,
+                        nivel       =0;
+                    <font color="gray">//=================================================================================</font>
+                    <font color="gray">//Estrutura de captura do time</font>
+                    time_t Data_tempo;
+                    time(&Data_tempo);
+                
+                    struct tm *data =localtime(&Data_tempo);
+                    struct tm *tempo=localtime(&Data_tempo);
+                
+                    int day  = data->tm_mday,
+                        mes  = data->tm_mon,
+                        ano  = data->tm_year+1900, <font color="gray">//é preciso somar 1900 para obter o ano correto</font>
+                        hour = data->tm_hour,
+                        minut= data->tm_min;
+                        
+                    <font color="gray">//=================================================================================</font>
+                    <font color="gray">//Fim Estrutura de captura do time</font>
+                
+                    string status="OFF";
+                
+                    ofstream File("Registro.csv", ios::app);
+                    if(!File)
+                    {
+                        cout &lt;&lt; "Falha na abertura do arquivo:" &lt;&lt; endl;
+                        exit(1);
+                    }
+                    <font color="gray">//Data/Hora/Temperatura/Ligado ou desligado</font>
+                
+                    while(cin &gt; temperatura &gt; nivel)
+                    {
+                
+                        if(temperatura >= 5 && nivel >=5)//coondição de status
+                        {
+                            status = "ON";
+                        }
+                        File &lt;&lt; day
+                            &lt;&lt; "/" 
+                            &lt;&lt; mes 
+                            &lt;&lt; "/" 
+                            &lt;&lt; ano 
+                            &lt;&lt; ";" 
+                            &lt;&lt; hour 
+                            &lt;&lt; ":" 
+                            &lt;&lt; minut 
+                            &lt;&lt; ";" 
+                            &lt;&lt;  temperatura 
+                            &lt;&lt; ";"  
+                            &lt;&lt; nivel 
+                            &lt;&lt; ";" 
+                            &lt;&lt; status 
+                            &lt;&lt;"\n";
+                    }
+                
+                    File.close();
+                    return 0;
+                }                    
+                </code>
+            </pre>
+                <figure class="Foto-AllanKay">
+                    <img src="../_imagens/LogRegistro00.png" />
+                    <figcaption>
+                        <img src="../_imagens/LogRegistro_said.png" />
+                    </figcaption>
+                </figure>
+
+            </div>
+<p>
+    Legal neh! Agora precisamos é saber ler dados vindo de arquivos.
+</p>
+
+<article id="MainTitle">
+    <h2>Lendo arquivos .txt ou .csv</h2>
+</article>
+<p>
+    Ler arquivo sequencial .txt é fundamental para muitos aplicativos, muitas vezes temos que fazer tratamentos dos dados 
+    que recebemos da nuvem. vejamos um exemplo simples de como construir um código em C++ para leitura de dados sequencial num arquivo .TXT.
+    O botão abaixo mostrará o leyout do arquivo <em>"Holerite.txt"</em> para copiar e colar na sua máquina, lembrando que o arquivo <em>"Holerite.txt"</em> tem que estar na mesma pasta
+    do seu projeto C++. Caso não! deverá especificar o caminho do arquivo.
+</p>
+     <button onclick="document.location='Holerite.txt'">Arquivo Holerite</button>
+<pre>
+    <code>
+                    <font color="gray">//inclusão de bibliotecas</font>
+                    #include &lt;iostream&gt;
+                    using std::cout;
+                    using std::cin;
+                    using std::ios;
+                    using std::endl;
+                    using std::cerr;
+
+                    #include &lt;cstdlib&gt;
+                    using std::exit;
+
+                    #include &lt;string&gt;
+                    using std::string;
+
+                    #include &lt;fstream&gt;
+                    using std::ifstream;
+                    using std::ofstream;
+
+                    <font color="gray">//programa principal</font>
+                    int main()
+                    {
+                        string   Str;
+                        ifstream Arquivo("Holerite.txt", ios::in);
+                        <font color="gray">//Sistema de proteção contra falhas de abertura de arquivo</font>
+                        if(!Arquivo)
+                        {
+                            cerr &lt;&lt; "Erro ao abrir o arquivo para leitura" &lt;&lt;  endl;//menssagem de erro
+                            exit(1);<font color="gray">//O mesmo que abort()</font>
+                        }
+                        <font color="gray">//O uso do getline, ignora tabulaçoes de espeços tanto em &lt;&lt;  e &gt;&gt; </font>
+                        while(  getline(Arquivo, Str) )
+                        {
+                            cout &lt;&lt;  Str &lt;&lt;  endl;
+                        }
+                        while(1);
+                        return 0;
+                    }
+
+
+    </code>
+</pre>
+<figure class="Foto-AllanKay">
+    <img src="../_imagens/leituraHolerite.PNG" />
+    <figcaption>
+        <img src="../_imagens/leituraHoleriteConsole.PNG" />
+    </figcaption>
+</figure>
+
+
+<p>
+    Bora outro exemplo! Mas dessa vez, ler um arquivo .csv do Exel. O que eu ahco muito útil para tratar dados.
+    o código abaixo, é um exemplo simples de ler um arquivo .csv, repara que o separador das células ponto-e-vírgula(;) aparece como sendo 
+    parte de uma string.
+</p>
+<p>
+    Neste exmplo, cada linha é inserida na string e mostrada na tela. Mais adiante mostrarei como segmentar cada célula 
+    para uso individual dos valores para um futuro tratamento de dados.
+</p>
+
+<pre>
+    <code><font color="green">
+            #include &lt;iostream&gt;
+            #include &lt;cstdlib&gt;
+            #include &lt;cstring&gt;
+            #include &lt;ostream&gt;
+            #include &lt;fstream&gt;
+            
+            using std::exit;
+            using std::ios;
+            using std::ifstream;
+            using std::ofstream;
+            using std::cin;
+            using std::cout;
+            using std::endl;
+            using std::string;
+            using std::cerr;</font>
+            
+            
+            int main()
+            {
+                cout &lt;&lt; "Hello REAA!" &lt;&lt; endl;
+                string Str_1;<font color="gray">//String que vai armazenar cada linha do arquivo.</font>                       
+            
+                <font color="blue">ifstream Arquivo("Arquivo.csv", ios::in);</font><font color="gray">//leitura de arquivo</font>
+                if(!Arquivo)
+                {
+                    cerr &lt;&lt; "Erro ao abrir o arquivo para leitura.." &lt;&lt; endl;
+                    exit(1);
+                }
+                while( getline(Arquivo, Str_1 ) )
+                {            
+                    cout &lt;&lt; Str_1 &lt;&lt; endl;            
+                }
+                return 0;
+            }
+            
+    </code>
+</pre>
+<figure class="Foto-AllanKay">
+    <img src="../_imagens/lendoArquivoCSV_2.png" />
+    <figcaption>
+        <img src="../_imagens/lendoCSV.png" />
+    </figcaption>
+</figure>
+<p>
+    O exemplo acima é simples e rápido para termos uma ideia como de como é feito a leitura de um arquivo, veja que apenas mudei
+    de .txt para .csv. Porém! Particularmente quando eu trablho com arquivos .csv eu costumo tratar dados que contém em cada célula
+    
+</p>
+        </section>
+        
+
+    </div>
+    
+</body>
+
+</html>

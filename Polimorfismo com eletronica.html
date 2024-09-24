@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>REAA</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" type='text/css' href="Estilo.css">
+
+    <script src='main.js'></script>
+
+
+</head>
+
+<body>
+    <div id="interface_praticando">
+
+        <header id="cabecalho">
+            <hgroup id="logo-cabecalho">
+                <img src="REAA-Logo001.PNG">
+            </hgroup>
+            <nav id="menu">
+                <ul>
+                    <h2>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="conteudo.html">CONTEUDO</a></li>
+                    </h2>
+                </ul>
+            </nav>
+        </header>
+        <section id="conf-aulas">
+            <div id="Aulas">
+            </div>
+        </section>
+    </div>
+
+    <div id="interface_praticando">
+        <pre>
+            <code>
+                <font color="gray">   
+                    O código abaixo, demostra um exemplo didático de duas classes <em>resisitor e capacitor</em> que herdam 
+                da classe basica <em>componentes</em> a função virtual <em>getComponente(double, double)</em>. Em cada uma das classes ela é redefinida
+                de acordo com o proósito da classe derivada.</font>                  
+                <font color="gray">
+                    Você pode criar um ponteiro de classe base para apoontar para as classes derivadas, e assim obter mais de um tipo 
+                de retorno. Hora você quer ter um retorno com valor de resistor, capacitor ou até mesmo o retorno do cálculo de uma 
+                área geométrica.</font>
+                
+            </code>
+        </pre>
+    </div>
+    <!--base.hpp-->
+
+    <div id="interface_praticando">
+
+        <pre>
+            <code>
+                <font color="gray">
+                //Criação da classe base
+                //A função virtual diz que esta mesma função pode retornar cálculos diferentes
+                //Respeitando o número e tipo de argumentos</font>
+                #ifndef CALCULACOMPONENTES_H
+                #define CALCULACOMPONENTES_H
+
+                class componente
+                {
+                public:
+                    componente();
+                    <font color="blue"> virtual double getComponente(double=0.0, double=0.0)=0;</font></font><font color="gray">//Igualar a zero para tornar a função virtual pura</font>
+
+                };
+                #endif // CALCULACOMPONENTES_H
+
+            </code>
+           </pre>
+
+    </div>
+    <!--Fim-->
+
+
+    <div id="interface_praticando">
+
+        <pre>
+             <code>
+                    <font color="gray">
+                    //Não precisa construir a função membro dentro do arquivo header da classe base. </font>                   
+                    #include &lt;iostream&gt;
+                    using namespace::std;
+                    #include "CalculaComponente.hpp"
+                    
+                    componente::componente()//cnt
+                    {
+                        //vazio
+                    }
+                    
+     
+ 
+             </code>
+            </pre>
+    </div>
+
+    <div id="interface_praticando">
+        <pre>
+            <code>
+                    <font color="gray">
+                    //Com a função virtual dentro da classe base
+                    //Posso usar em outras classes a mesma função, combinando com o que 
+                    //já aprendemos sobre herança, redefinimos a função dentro da classe resisitor.</font> 
+                    #ifndef CALCULARESISTOR_H
+                    #define CALCULARESISTOR_H
+
+                    #include "CalculaComponente.hpp"
+
+                    class resistor:public componente<font color="gray">//Herda da classe componente</font>
+                    {
+                    public:
+                        resistor();
+                        <font color="blue">virtual double getComponente(double=0.0, double=0.0);</font><font color="gray">//aqui não precisamos igualar a zero</font>
+
+                    };
+                    #endif // CALCULARESISTOR_H
+
+               
+            </code>
+        </pre>
+    </div>
+    <div id="interface_praticando">
+        <pre>
+            <code>
+                    <font color="gray">
+                    //Neste arquivo redefino a função getComponente, retornando o valor do resisitor com as info, tensao e Amper</font>
+                    #include &lt;iostream&gt;
+                    using namespace::std;
+                    #include "Resisitor.hpp"
+                    
+                    resistor::resistor()
+                    {
+                        <font color="gray">//vazio</font>
+                    }
+                    
+                    double resistor::getComponente(double tensao, double amper)
+                    {
+                            return tensao/amper;
+                    }
+    
+            </code>
+        </pre>
+
+
+
+    </div>
+    <div id="interface_praticando">
+        <pre>
+            <code>
+               
+                    <font color="gray">
+                    //Outra classe que herda a mesma função, e redefine para outros cálculos.
+                    //Neste caso irá calcular o valor de um capacitor apartir das info. frequ~encia e capacitância.
+                    </font>
+                    #ifndef CALCULACAPACITOR_H
+                    #define CALCULACAPACITOR_H
+                    #include "CalculaComponente.hpp"
+
+                    class capacitor:public componente
+                    {
+                    public:
+                        capacitor();
+                        virtual double getComponente(double=0.0, double=0.0);
+
+                    };
+                    #endif // CALCULACAPACITOR_H
+ 
+            </code>
+        </pre>
+    </div>
+    <div id="interface_praticando">
+        <pre>
+            <code>
+                
+                    <font color="gray">
+                    //Neste arquivo faço o meso que fiz com a implementação do cálculo do resisitors</font>
+                    #include &lt;iostream&gt;
+                    using namespace::std;
+
+                    #include "Capacitor.hpp"
+                    
+                    capacitor::capacitor()
+                    {
+                    
+                    }
+                    
+                    double capacitor::getComponente(double freq, double xl)
+                    {
+                            return 1/(2*3.14*freq*xl);
+                    }
+    
+            </code>
+        </pre>
+    </div>
+    <div id="interface_praticando">
+        <pre>
+            <code>
+                    <font color="gray">
+                    //Arquivo man</font>
+                    #include &lt;iostream&gt;
+                    using namespace std;
+                    //Incluo todas as libs das classes
+                    #include "CalculaComponente.hpp"
+                    #include "Resisitor.hpp"
+                    #include "Capacitor.hpp"
+                    
+                    
+                    int main()
+                    {
+                        cout &lt;&lt; "Hello REAA" &lt;&lt; endl;
+
+                        resistor  res;  <font color="gray">//Crio um objeto da classe resisitor</font>
+                        capacitor cap;  <font color="gray">//Crio um objeto da classe capacitor</font>
+                        
+                        componente *res_ = &res; <font color="gray">//Como a classe basica é virtual pura, é eceita apenas um ponteiro para os objetos</font>
+                        <font color="gray">//Um ponteiro do tipo classe base, está apontando para o endereço do objeto resistor</font>
+
+                        <font color="gray">//Retorna o valor do resistor de acordo comas info.</font>
+                        cout&lt;&lt;" Resistor: "&lt;&lt; res_->getComponente(10.0, 2.0) &lt;&lt;endl;
+
+                        <font color="gray">//Agora o ponteiro da classe base, aponta para o enderço do objeto do capacitor</font>
+                        res_=&cap;
+
+                        <font color="gray">//E com os mesmos dados, ele retorna o valor do capacitor</font>
+                        cout&lt;&lt;"Capacitor: "&lt;&lt; res_->getComponente(10.0, 2.0 ) &lt;&lt;endl;
+                    
+                        return 0;
+                    }
+                    <font color="gray">//legal neh!!!!!!</font>
+            </code>
+        </pre>
+    </div>
+
+
+</body>
+
+<!--Rodapé-->
+<div id="interface_praticando">
+
+    <footer id="rodape">
+        <p>
+            by Lucas Lorenço Alves | senoratec.io@gmail.com |
+            <a href="https://www.linkedin.com/in/lucas-lorenço-alves-4206b9201/" target="_blank">linkedin</a>
+        </p>
+    </footer>
+</div>
+
+</html>

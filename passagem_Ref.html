@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/Conteudo.css">
+    <link rel="stylesheet" href="../_css/body.css">
+    <link rel="stylesheet" href="../_css/Estilo.css">
+
+    <title>REAA</title>
+
+</head>
+
+<body>
+    <div id="interface">
+
+        <header>
+            <h1></h1>
+            <h4></h4>
+        </header>
+        <nav id="menu">
+            <a href="#">Currículo</a>
+            <a href="Categorias.html">Categorias</a>
+            <a href="#">Open Source</a>
+            
+        </nav>
+        <section id="conf-aulas">
+            <div id="Aulas">
+                <hgroup id="saudacoes">
+                    <h2>Passagem de argumentos por referência em funções</h2>
+                </hgroup>
+                <br>
+                <br>
+                <p>
+                    Há três maneiras em C++ de passar argumentos para funções. È elas. <br>
+                    <b>&#9745; Passagem por valor.</b> <br>
+                    <b>&#9745; Passagem por referência com argumentos de referência</b> <br>
+                    <b>&#9745; Passagem por referência com argumentos de ponteiro</b> <br>
+                </p>
+                <p>
+                    A <b>passagem por referência com argumentos de referência</b> e <b>passagem por referência com
+                        argumentos de
+                        ponteiro</b> têm semelhanças em termos de permitir que uma função modifique diretamente o valor
+                    original de
+                    uma variável fora do seu escopo. No entanto, há diferenças importantes na sintaxe e no comportamento
+                    associado a cada uma. Antes de verificar o programa a baixo, leia atentamente o que diz a respeito
+                    das diferenças entre elas.
+                </p>
+                <p>
+                    Antes disso, temos a <b>passagem por valor</b>, que refere-se à prática de passar argumentos para
+                    funções através de cópias
+                    dos valores originais. ou seja, a função recebe a cópia do(s) valor(es) e a função trabalha com a
+                    variável
+                    lá dentro e depois retorna um resultado sem alterar o valor original da variável que foi passada
+                    como argumento.
+                </p>
+                <p>
+                    Já a <b>passagem por referência com argumento de ponteiro</b>, é passado o argumento como
+                    endereço(&) de onde está o valor e alterado
+                    diretamente na variável.
+                    <br>Ex: <br>
+                    <em>cubebyReferenceByPoiter(&num);</em>
+                </p>
+                <p>
+                    E a <b>Passagem por referência com argumento de referência</b>, é passado o argumento normalmente ou
+                    seja sem (*) e (&).
+                    <br> Ex: <br>
+                    <em>cubebyReferenceByAddres(numero);</em>
+                </p>
+                <p>
+                    Ambas as abordagens têm suas aplicações e escolher entre elas depende dos requisitos específicos do
+                    código e do estilo de programação preferido. Em geral, a passagem por referência com argumentos de
+                    referência é preferida quando se trabalha com objetos existentes e não nulos. A passagem por
+                    referência com argumentos de ponteiro pode ser útil quando a nulidade é uma consideração importante
+                    ou quando a manipulação de ponteiros é desejada. Teste o programa a baixo para melhor entendimento, você pode usar qualquer
+                    editor de programa, particularmente eu uso o cod::blocks por facilitar a criação de arquivos header, como veremos mais adiante.
+                </p>
+                <pre>
+                    <code>
+                        #include &lt;iostream&gt;
+                            using namespace std;
+                            
+                            //========================================
+                            //--Protótipo da(s) funções--
+
+                            int cubebyValue(int);//Passagem por valor
+                            void cubebyReferenceByAddres(int&);//Passagem por eferencia
+                            void cubebyReferenceByPoiter(int*);
+
+                            //========================================
+                            //--Corpo do programa--
+
+                            int main()
+                            {
+                                cout &lt;&lt; "Hello REAA" &lt;&lt; endl;
+                                int number   =5,
+                                    numero   =10,
+                                    num      =40,
+                                    auxiliar =0;
+                            
+                                cout&lt;&lt;endl;
+                                cout &lt;&lt;"===Passagem por valor==="&lt;&lt;endl;
+                                cout &lt;&lt;"O valor original de number eh "&lt;&lt; number;
+                                auxiliar = cubebyValue(number); //passa o argumento number por valor;
+                                cout&lt;&lt; "\nO valor de number continua o mesmo " &lt;&lt; number &lt;&lt; endl;
+                                cout&lt;&lt; "O valor que retorna eh " &lt;&lt; auxiliar &lt;&lt; endl;
+                                cout&lt;&lt;endl;
+                            
+                                cout &lt;&lt;"===Passagem por referencia com argumentos de referencia===" &lt;&lt; endl;
+                                cout &lt;&lt;"O valor original de numero eh "&lt;&lt;numero&lt;&lt;endl;
+                                cubebyReferenceByAddres(numero);//Não retorna nada, pois ele altera diretamente <br> 
+                                                                //no endereço da variavel numero
+                                cout &lt;&lt;"O novo valor de numero eh "&lt;&lt;numero&lt;&lt;endl;
+                            
+                                cout&lt;&lt;endl;
+                            
+                                cout &lt;&lt;"===Passagem por referencia com argumentos de ponteiro===" &lt;&lt; endl;
+                                cout &lt;&lt;"O valor original de num eh " &lt;&lt; num &lt;&lt;endl;
+                                cubebyReferenceByPoiter(&num);
+                                cout &lt;&lt;"o novo valor de num eh " &lt;&lt; num &lt;&lt;endl;
+                            
+                                return 0;
+                            
+                            
+                                return 0;
+                            }//Fim
+                            
+                            
+                            //========================================
+                            //--Desenvolviemnto da(s) funções--
+
+                            //cálcula e retorna  o cubo do valor inteiro
+                            int cubebyValue(int number)
+                            {
+                                return number*number*number;
+                            }//Fim da função cubValue
+                            
+                            void cubebyReferenceByAddres(int &n)
+                            {
+                                n=(n)*(n)*(n);// o mesmo que n=n*2;
+                            }//Fim da função cubebyReferenceByAddres
+                            
+                            void cubebyReferenceByPoiter(int *n)
+                            {
+                                *n = (*n)*(*n)*(*n);
+                            }//Fim da função cubebyReferenceByPoiter
+                    </code>
+                </pre>
+                <p>
+                    Estude bem o código acima e pratique, faça testes invente programas que te força a usar as técnicas de passagem de um ou mais argumentos
+                    por valor, por ponteiro e por referência. A seção 8.4 do livro "Como programar C++", Deitel, 5°ed é crucial para melhor entendimento.
+                </p>
+            </div>
+        </section>
+        
+
+    </div>
+    
+</body>
+
+</html>
