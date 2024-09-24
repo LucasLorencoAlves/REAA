@@ -1,0 +1,369 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Fonte-Logo';
+    src: url("../_Fontes/bubblegum-sans-regular.otf");
+    src: url("../_Fontes/Dosis/Dosis-VariableFont_wght.ttf");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Titillium+Web:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap');
+
+
+
+body {
+    background-color: rgba(221, 221, 216, 0.7);
+    color: rgb(13, 13, 13);
+}
+
+/*Formatação da interface*/
+div#interface {
+    width:1300px;
+    height: auto;
+    background-color: rgb(252, 252, 251);
+    margin: -30px auto 50px auto;
+    box-shadow: 0px 0px 10px black;
+    /*deslocamento lateral, deslocamento vertical, espalhamento da sombra, cor da sombra*/
+
+}
+div#interface_praticando {
+    width:1000px;
+    height: auto;
+    background-color: rgb(252, 252, 251);
+    margin: -40px auto 50px auto;
+    box-shadow: 0px 0px 10px black;
+    /*deslocamento lateral, deslocamento vertical, espalhamento da sombra, cor da sombra*/
+
+}
+
+video#not-supported br{
+    background-color: rgb(228, 119, 17);
+}
+
+
+header#cabecalho {
+    position: relative;
+    border-bottom: 1px rgb(81, 81, 82) solid;
+    width: -90px;
+    /*background: url("../_IMAGENS/REAA-Logo001.PNG") no-repeat 1px 0px;*/
+    padding: 10px;
+}
+
+header#cabecalho h1 {
+    font-family: Arial, sans-serif;
+    font-size: 60px;
+    color: gray;
+    text-shadow: 1px 1px 2px rgb(171, 166, 166);
+    padding: 0px;
+    margin-left: 100px;
+    margin-bottom: 0px;
+
+
+}
+
+header#cabecalho h6 {
+    font-family: Arial, sans-serif;
+    color: gray;
+    text-shadow: 1px 1px 2px rgb(203, 201, 201);
+    padding: 0px;
+    margin-top: 0px;
+    margin-left: 50px;
+}
+
+hgroup#saudacoes h2 {
+
+    font-family: 'Titillium Web', sans-serif;
+    font-family: monospace;
+    color: rgb(132, 130, 130);
+    margin-bottom: -15px;
+    
+
+}
+
+hgroup#saudacoes h5{
+position: relative;
+    font-family: 'Titillium Web', sans-serif;
+    font-family: monospace;
+    color: rgb(195, 193, 193);
+    margin: auto;
+    padding-left: 400px;    
+}
+
+hgroup#saudacoes h4 {
+
+    font-family: 'Titillium Web', sans-serif;
+    font-family: monospace;
+    color: rgb(203, 199, 199);
+    margin-bottom: 80px;
+
+}
+
+
+p {
+    text-align: justify;
+    text-indent: 50px;
+    /* font-family: 'Montserrat', sans-serif;*/
+    font-family: 'Titillium Web', sans-serif;
+}
+
+/*classes*/
+
+figure.Foto-AllanKay {
+    position: relative;
+    border: 8px solid white;
+    box-shadow: 1px 1px 10px black;
+    width: 90%;
+    height: 90%;
+    margin: 20px auto 20px auto;
+}
+figure.Foto-AllanKay img {
+    width: 100%;
+    height: 100%;
+
+}
+figure.Foto-AllanKay figcaption {
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    background-color: rgba(0, 0, 0, .4);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: opacity 1s;
+
+}
+figure.Foto-AllanKay:hover figcaption {
+    opacity: 1;
+}
+
+
+figure.Foto-Relogio {
+    position: relative;
+    border: 8px solid white;
+    box-shadow: 1px 1px 10px black;
+    width: 50%;
+    height: 50%;
+    margin: 20px auto 20px auto;
+}
+
+figure.Foto-Relogio img {
+    width: 100%;
+    height: 100%;
+
+}
+
+/*Formatação de estilo para a figura do relogio*/
+figure.Foto-Relogio figcaption {
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    background-color: rgba(0, 0, 0, .4);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: opacity 1s;
+
+}
+
+figure.Foto-Relogio:hover figcaption {
+    opacity: 1;
+}
+
+
+/*formatação do menu*/
+/*Sempre que for um id a chamada do estilo é um #*/
+/*foramtação menu e tudo que ul será*/
+
+nav#menu ul {
+    position: absolute;   
+    /*list-style: none;*/
+    top: -10px;
+    left: 700px;
+    font-family:'Courier New', Courier, monospace;
+}
+
+/*Sempre que for um id a chamada do estilo é um #*/
+/*foramtação menu e tudo que li será*/
+nav#menu li {
+    display: inline-block;
+    /*menu horizontal*/
+    background-color: rgb(231, 228, 228);
+    padding:5px 2px 2px 5px;
+    margin: 1px -10px 0px 1px;
+}
+
+nav#menu li:hover {
+    background-color: rgb(206, 204, 204);
+}
+
+nav#menu a {
+    color: rgb(124, 122, 122);
+    text-decoration: none;
+}
+
+nav#menu a:hover {
+    color: rgb(245, 241, 241);
+    
+}
+
+section#corpo {
+    /*ser motrada como um block*/
+    display: block;
+    width: 550px;
+    float: left;
+    border-right: 1px solid gray;
+    padding-right: 15px;
+    padding-left: 10px;
+}
+
+section#conf-aulas {
+    /*ser motrada como um block*/
+    display: block;
+    width: 750px;
+    padding-right: 0px;
+    padding-left: 100px;
+}
+
+div#divclass p{
+    
+    text-align: auto;
+    
+}
+
+aside#Lateral {
+    display: block;
+    float: right;
+    width: 350px;
+    padding-right: 35px;
+
+}
+
+footer#rodape p {
+    clear: both;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 2px solid rgba(241, 237, 237, 0.9);
+    text-align: center;
+}
+
+article#MainTitle h2 {
+    font-size: 12pt;
+    color: rgb(66, 65, 65);
+    background-color: rgba(73, 72, 72, 0.4);
+    padding: 5px 0px 5px 5px;
+    margin: 10px 0px 10px 0px;
+}
+
+article#Config-Classes h2 {
+    font-size: 12pt;
+    color: rgb(66, 65, 65);
+    background-color: rgba(73, 72, 72, 0.4);
+    padding: 5px 0px 5px 5px;
+    margin: 5px 45px 5px 5px;
+}
+
+hgroup#logo-cabecalho {
+    font-size: 80px;
+    padding: 40px 0px 0px 0px;   
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+
+/*
+aside#Lateral{
+    background-color: hwb(180 4% 11%);
+    margin: 15px 20px 15px 15px;
+    height: auto;
+}*/
+
+aside#Lateral h4{
+    font-size: 12pt;
+    color: rgb(66, 65, 65);
+    background-color: rgba(73, 72, 72, 0.4);
+    padding: 5px 0px 5px 5px;
+    margin: 10px -20px 10px -30px;
+}
+aside#Lateral p{
+    font-size: 12pt;
+    
+    padding: 5px 0px 5px 5px;
+    margin: 10px -20px 10px -30px;
+}
+
+div#divclass{
+    font-family: 'Montserrat', sans-serif;
+}
+
+img#lacoFor{
+    margin: auto;
+    box-shadow: 0px 0px 10px black;
+}
+
+pre#codigo-final{
+    margin: 10px 0px 10px -160px;
+}
+
+article#MainBody {     
+ 
+    background-color: rgba(120, 132, 144, 0.4);
+    padding: 5px 0px 5px 5px;
+    margin: 10px -110px 10px 0px;
+}
+
+article#prototypeFunction
+{
+    background-color: rgba(208, 210, 209, 0.4);
+    padding: 5px 0px 5px 5px;
+    margin: 10px -110px 10px 0px;
+}
+
+article#DevFunction{
+    background-color: rgba(129, 129, 127, 0.4);
+    padding: 5px 0px 5px 5px;
+    margin: 10px -110px 10px 0px;
+}
+
+article#cabecalho{
+    background-color: rgba(235, 234, 233, 0.4);
+    padding: 5px 0px 5px 5px;
+    margin: 10px -110px 10px 0px;
+}
+
+figure.saida_codigo {
+    position: relative;
+    border: 8px solid white;
+    box-shadow: 1px 1px 10px black;
+    width:  180%;
+    height: 180%;
+    margin: 20px auto 20px auto;
+}
+
+figure.saida_codigo img {
+    width: 100%;
+    height: 100%;
+
+}
+
+/*Formatação de estilo para a figura do relogio*/
+figure.saida_codigo figcaption {
+    opacity: 0;
+    position: absolute;
+    top: 0px;
+    background-color: rgba(0, 0, 0, .4);
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: opacity 1s;
+
+}
+
+figure.saida_codigo:hover figcaption {
+    opacity: 1;
+}
