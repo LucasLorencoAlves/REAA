@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/Conteudo.css">
+    <link rel="stylesheet" href="../_css/body.css">
+    <link rel="stylesheet" href="../_css/Estilo.css">
+
+    <title>REAA</title>
+
+</head>
+
+<body>
+    <div id="interface">
+
+        <header>
+            <h1></h1>
+            <h4></h4>
+        </header>
+        <nav id="menu">
+            <a href="#">Currículo</a>
+            <a href="Categorias.html">Categorias</a>
+            <a href="#">Open Source</a>
+            
+        </nav>
+        <section id="conf-aulas">
+            <hgroup id="saudacoes">
+                <h2>Classes e objetos</h2>
+                <br>
+                <br>
+            </hgroup>
+            <article id="MainTitle">
+                <h2>
+                    <p>&#128064;
+                        IMPORTANTE! <br>
+                        Orientação a Objetos é um modelo de programação que visa modelar algo do mundo real
+                        encapsulada
+                        em uma unica unidade chamada <em>classe</em> que ao instânciar no corpo main, estará criando
+                        um
+                        objeto. E como,
+                        todo objeto tem, caracteristicas, identidade e comportamento, a maneira como este objeto se
+                        relaciona com os outros
+                        é o que
+                        faz nascer o conceito OOP, um objeto orientado a fazer algo. <br>
+                        E um bom relacionamento se dá através dos recursos de: <br>
+                    <ol>
+                        <li>Classes e Objetos</li>
+                        <li>Encapsulamento</li>
+                        <li>Herança</li>
+                        <li>Polimorfismo</li>
+                        <li>Métodos Virtuais</li>
+                        <li>Sobrecarga de Operadores</li>
+                        <li>Construtores e Destrutores</li>
+                        <li>Templates e Programação Genérica</li>
+                        <li>Gerenciamento de Memória</li>
+                        <li>Exceções</li>
+                    </ol>
+                    </p>
+                    <p>È importante que leia este resumo para depois consultar o livro do deitel "Como programar
+                        C++" 5ed.
+                        O conteúdo é extenso, e precisa de muita paciência e tranquilidade para absorver & tempo e
+                        dedicação para praticar.
+                        <br><br>Bons estudos!.
+                    </p>
+
+                </h2>
+
+            </article>
+            <p>
+                Este, sem dúvida, é um tema altamente relevante na linguagem C++, na minha opinião. Para aqueles
+                familiarizados com programação em C, é possível identificar semelhanças com o conceito de estruturas
+                de dados. Em C, frequentemente utilizamos structs para representar modelos de objetos, definidos por
+                atributos ou tipos de dados específicos. Abaixo, apresento um exemplo que serve como lembrete sobre
+                como é a construção e utilização de uma struct em C. Essas noções são fundamentais ao se
+                transicionar da programação procedural para a orientada a objetos em C++.
+            <pre>
+                <code>
+            #include &lt;iostream&gt;
+            using namespace std;
+            
+                        
+            //========================================
+            //--definição global da struct--
+           <font color="blue"> typedef struct
+            {
+                int paginas;
+                double peso;
+                char *autor;
+            }</font><font color="green">Livro</font>;  //Defino novo tipo(classe) do tipo Livro 
+            
+            //========================================
+            //--Corpo do programa--
+            int main()
+            {
+                printf("Hello REAA\n");
+                Livro deEleronica;                   //defino meu novo dado chamado 
+                                                     //"deEletronica" do tipo estrutura livro;
+                        
+                deEleronica.paginas=20;              //acesso osatributos da estrutura através do operador ponto
+                deEleronica.peso=.2500;              //acesso osatributos da estrutura através do operador ponto
+                deEleronica.autor="Lucas Alves";     //acesso osatributos da estrutura através do operador ponto
+                        
+                printf("paginas: %d \n", deEleronica.paginas);  //Imprimo os dados de cada atributo
+                printf("peso: %.3f\n", deEleronica.peso);       //Imprimo os dados de cada atributo
+                printf("autor: %s\n", deEleronica.autor);       //Imprimo os dados de cada atributo
+                        
+                return 0;
+            }//Fim da man 
+                </code>
+            </pre>
+
+            </p>
+            <p>
+                Certamente! A orientação a objetos é, de maneira geral, um modelo de programação
+                (evitei usar a palavra-paradigma)
+                que oferece um
+                modelo estruturado para resolver problemas. Em termos simples, ela representa uma abordagem para
+                modelar conceitos do mundo real, utilizando a noção de objetos. No exemplo apresentado
+                anteriormente, ilustrei essa abordagem em um pequeno programa em C, que representa a estrutura de um
+                livro, focalizando características específicas, tais como a quantidade de páginas, o peso e o autor.
+                Embora existam mais atributos possíveis, optei por citar apenas esses para fins didáticos. Essa
+                simplificação ajuda a destacar a essência da orientação a objetos na prática, mostrando como ela
+                pode ser aplicada de maneira concisa e eficaz na representação de entidades do mundo real.
+            </p>
+            <p>
+                No corpo do meu programa principal, eu criei uma variável chamada <font color="gray">
+                    <em>deEletronica</em>
+                </font> do tipo
+                <font color="gray"><em> estrutura Livro</em></font>,
+                eu poderia criar outra variável chamada <font color="gray"><em>deFisica, deGeometria, deAutoAjuda e
+                        etc...</em></font> com as mesmas caracteristicas da estrutura
+                Livro e com isso criando
+                uma estrutura de dados. Ou uma estante de livros.
+            </p>
+            <p>
+                Na linguagem C++, em vez de criarmos uma struct, criamos uma <font color="gray">classe</font>.
+                Dentro dela, não só utilizamos
+                tipos de dados primitivos como <font color="gray">int, float, double e char</font>, chamados de
+                membros de dados, para definir
+                as características do objeto. Além disso, incluímos funções, chamadas de funções membros, que
+                estabelecem comportamentos específicos. Isso faz com que uma variável, por exemplo, chamada de
+                <em>"deEletrônica"</em>, não seja apenas uma variável, mas um objeto. Isso acontece porque, além de
+                possuir
+                características, ela também tem comportamento devido às funções membros que executam tarefas dentro
+                da classe. E ai, que que achou?
+            </p>
+            <p>
+                A baixo cito o mesmo exemplo da estrutura Livro. Porém, modificado conforme explicado anteriromente,
+                em vez de struct passa a ser class e além de tipos primitivos declarados como <em>private</em>,
+                temos
+                também funções membros declarados como <em>public</em>.
+            </p>
+            <pre>
+                <code>
+<article id="cabecalho">                        
+#include &lt;iostream&gt;
+using namespace std;
+#include &lt;string&gt;
+using std::string;
+</article>                            
+<font color="#D3D3D3">//========================================</font>
+<font color="#D3D3D3">//--definição global da struct--</font>
+
+<article id="prototypeFunction">
+class Livro
+{
+public:
+Livro(int=0, double=0.0, string=" ");                       
+void    setNumberPage(int);
+int     getNumberPage();
+
+void    setWeight(double);
+double  getWeight();
+
+void setAutor(string);
+string getAutor();
+
+void imprime();
+private:
+int     _page;
+double  _weight;
+string  _autor;
+
+};
+</article>
+
+<font color="#D3D3D3">//========================================</font>
+<font color="#D3D3D3">//--Corpo do programa--</font>
+<article id="MainBody">
+int main()
+{
+printf("Hello REAA\n");
+Livro deEletronica;    //Crio um objeto "deEletronica" da classe Livro
+
+deEletronica.setAutor("Lucas Alves");  //chamo a função membro "setAutor" para setar o nome do autor
+deEletronica.setWeight(0.4);           //chamo a função membro "setWeight" para setar o peso do livro
+deEletronica.setNumberPage(10);        //chamo a função membro "setNumberPage" para setar o numero de paginas do livo
+
+deEletronica.imprime();                //chamo a função mebro "imprime" para imprimir os valore dos membros de dados
+                                       //do objeto criado no cropo da função man.
+return 0;
+}//Fim da man
+</article >    
+
+<font color="#D3D3D3">//========================================</font>
+<font color="#D3D3D3">//--Construtor--</font>
+
+<article id="DevFunction">
+Livro::Livro(int paginas, double peso, string autor)
+{
+_autor=autor;
+_page=paginas;
+_weight=peso;
+}//Fim do construtor
+<font color="#D3D3D3">//========================================
+//--Seta o numero de paginas--</font>
+void Livro::setNumberPage(int page)
+{
+_page=page;
+}//Fim  setNumberPage
+<font color="#D3D3D3">//========================================
+//--Entrega o número de paginas--</font>
+int Livro::getNumberPage()
+{
+return _page;
+}//Fim do getNumberPage
+<font color="#D3D3D3">//========================================
+//--Seta o peso do livro--</font>
+void Livro::setWeight(double peso)
+{
+_weight=peso;
+}//FIm do getWeight
+<font color="#D3D3D3">//========================================
+//--Entrega o peso do livro--</font>
+double Livro::getWeight()
+{
+return _weight;
+}//Fim
+<font color="#D3D3D3">//========================================
+//--Seta o Autor do livro--</font>
+void Livro::setAutor(string autor)
+{
+_autor=autor;
+}//Fim do setAutor
+<font color="#D3D3D3">//========================================
+//--Entrega o autor do livro--</font>
+string Livro::getAutor()
+{
+return _autor;
+}//Fim do getAutor
+<font color="#D3D3D3">//========================================
+//--Imprime na tela--</font>
+void Livro::imprime()
+{
+cout&lt;&lt;"Numero paginas :"&lt;&lt;getNumberPage()&lt;&lt;endl;
+cout&lt;&lt;"peso  do livro :"&lt;&lt;getWeight()&lt;&lt;endl;
+cout&lt;&lt;"Autor do livro :"&lt;&lt;getAutor()&lt;&lt;endl;
+}
+</article>
+                </code>
+            </pre>
+
+            <hgroup id="saudacoes">
+                <h2>Encapsulamento:</h2>
+                <br>
+            </hgroup>
+
+            <p>
+                No codigo acima, já explorei três dos conceitos fundamentais da orientação a objetos: <em>classe,
+                    objeto
+                    e encapsulamento</em>. Vou conduzir uma reflexão sobre o programa acima e como é habitual
+                <em>"dividir para conquistar"</em> cada bloco de tom cinza é uma parte do programa. Isso facilita
+                uma compreensão na hora de construir programas, promevendo reusabilidade do código e manutenção.
+            </p>
+
+            <p>
+                O primeiro bloco se refere a inclusão das bibliotecas padrões do C++:<em>&lt;iostream&gt;</em>
+                , <em>&lt;string&gt;</em>, utilizei o <em> using std::string</em> para importar somente a função
+                <em>string</em>
+                . Mas ! se quiser facilitar pode usar <em>using namespace std:</em>
+                a baixo de cada inclusão de lib's.
+            </p>
+            <p>
+                O segundo bloco, é mais interessante pois é nele que estou criando a minha unidade de
+                programa(classe). Veja a sintaxe.
+
+            <pre>
+                    <code>
+                        class &lt;nome da classe&gt;
+                        {
+                            public:
+                               <font color="gray"> <em>...Construtor</em></font>
+                               <font color="gray"> <em>...protótipo de funções, que serão chamadas de funções membro</em></font>
+                            private:
+                            <font color="gray">    <em>...declaração de variáveis, que serão chamadas de atributos</em></font>
+                        };
+                    </code>
+                </pre>
+
+            </p>
+            <p>
+                A classe é definida com a palavra reservada <em>class</em> seguido do nome da classe que o
+                programador vai escolher,
+                e dentro das chaves <em>{..}</em> será definido duas partes de acesso, uma de acesso publico
+                <em>public</em> e outra de acesso privado
+                <em>private</em>.
+            </p>
+            <p>
+                Em <em>public</em> teremos um construtor padrão que será responsável por inicialiar os atributos da
+                classe.
+                Detalhe! no construtor é opcional declarar o nome do atributo, eu sempre costumo colocar apenas o
+                tipo e junto já definir
+                o valor que será inicializado. Em seguida defino minhas funções membros. Sempre utilizo set no
+                inicio de cada função que vou usar apenas para setar os atributos, isso por questão de segurança,
+                por exemplo
+                seja um atributo chamada <em>idade</em>, logo sabemos que não há idade negativa, então posso
+                definir.
+            <pre>
+                    <code>
+                        void Livro::setIdade(int age)
+                        {
+                            _AtributoAge = (age > 0 ? age:0) //usando o operador ternário(interrogação), 
+                                                             //digo que se o usuário estipular uma idade
+                                                             //maior que zero, então o atributo receberá 
+                                                             //o próprio valor "age", senão receberá o
+                                                             //valor 
+                                                             //zero.
+                        }
+                    </code>
+                </pre>
+            </p>
+            <p>
+                Como a função apenas "seta o atributo", então não retorna nada, por isso "void".
+                Já a função "get", deve retornar algum valor de tipo especificado.
+            <pre>
+                    <code>
+                        int Livro::getIdade()
+                        {
+                            return _AtributoAge;
+                        }
+                        
+                    </code>
+                </pre>
+            </p>
+            <p>
+                Repare que <em>"Livro::"</em> acompanha a função membro, isso por que o duas vezes dois pontos é um
+                operador que conecta
+                a relação da classe com as funções membros(você vai encotrar no livro "Como programar em C++-Deitel,
+                5ed" como, <em>Operador
+                    de resolução de escopo binário).
+                </em>
+            </p>
+            <p>
+                O último bloco é a parte de desenvolvimento dos protótipos das funções(funções membros).
+                <font color="gray"> <em>A sintaxe para desenvolver as funções membros</em></font> é, primeiro:
+                <br>
+                -Especifica o tipo de retorno da função membro.<font color="gray"><em>double, int, float..</em>
+                </font> <br>
+                -Usa <font color="gray"><em>&lt;class&gt;</em>::<em>&lt;Funcão membro&gt;. <br>
+                        &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EX: Livro::getWeight()</em></font>
+                <br>
+                -Dentro do bloco de código, crie a regra de comportamento da função membro assim como foi explicado
+                acima sobre a função que
+                "seta e retorna" o _AtributoAge.<br>
+            <pre>
+    <font color="gray">                    { <br>                                           
+                                ...funções membro.<br>
+                        }
+                    </font> 
+            </pre>
+            <br>
+            Ficando dessa forma.
+            <pre>
+                    <font color="gray"><br>
+                        //========================================
+                        //--Seta o peso do livro--
+                        void Livro::setWeight(double peso)
+                        {
+                             _weight=peso;
+                        }//FIm do getWeight
+
+                        //========================================
+                        //--Entrega o peso do livro--
+                        double Livro::getWeight()
+                        {
+                              return _weight;
+                        }//Fim </font> 
+                </pre>
+            <br>
+
+            </p>
+            <p>Observa que foi usado duas funções para definir um comportamento. Funções <b>setting e getting</b>
+                ,é um boa prática de programação usar função <em>set</em> para setar e garantir que o atributo terá
+                o valor dentro do esperado
+                e função <em>get</em> para usa-la como retorno</p>
+            <p>
+                Dentro do corpo <font color="gray"><em>int main()</em></font>. Fazemos a chamada da classe para
+                criar um objeto, em algumas obras
+                é dito com invocar a classe, mas particularmente acho isso muito dark pra programação. Então,
+                chamamos a classe "Livro" e instanciamos
+                um objeto. Ex:
+                <font color="gray"><br>
+                    <pre>
+                    Livro deEletrônica;
+
+                    ou 
+
+                    Livro deFisica(50, 0.62, "Eletrônica na veia");
+                </pre>
+                </font>
+                <br>
+
+
+
+            </p>
+            <pre>
+                <code>
+<font color="gray">//========================================
+//--Corpo do programa--
+int main()
+{
+printf("Hello REAA\n");
+Livro deEletronica;    //Crio um objeto "deEletronica" da classe Livro
+
+deEletronica.setAutor("Lucas Alves");  //chamo a função membro "setAutor" para setar o nome do autor
+deEletronica.setWeight(0.4);           //chamo a função membro "setWeight" para setar o peso do livro
+deEletronica.setNumberPage(10);        //chamo a função membro "setNumberPage" para setar o numero de paginas do livo
+
+deEletronica.imprime();                //chamo a função mebro "imprime" para imprimir os valore dos membros de dados
+                                       //do objeto criado no cropo da função man.
+
+//=====Criamos outro objeto com inicialização direta==========
+cout&lt;&lt;endl;
+cout&lt;&lt;"novo objeto"&lt;&lt;endl;
+Livro deFisica(50, 0.61, "Gravidade Zero");
+deFisica.imprime();
+
+return 0;
+}//Fim da man 
+</font> 
+            </code>
+            </pre>
+            <p>
+                Para atribuir valores aos atributos é usado o operador ponto (.) para relacionar o objeto com a
+                função membro
+                ou podendo inicializar os atributos usando o próprio objeto, como é mostrado na denição <font
+                    color="gray">
+                    <em>Livro deFisica(50, 061, "Gravidade Zero")</em>
+                </font>
+
+            </p>
+            <p>
+                Como Aluno da Engenharia Eletrônica, eu demorei muito para aprender os macetes da programação
+                orientada a objetos, mas com muitos exercícos, e leitura pausadamente eu pude
+                absorver o conhecimento. Copie o código acima, rode ele e estude, depois faça alterações
+                para ver na prática como funciona a declaração de classes e objetos.
+            </p>
+            <p>
+                Após ler este resumo, não deixe de ler por completo os cáptulo 3 e 9 do livro <em>"C++: Como programar-Deitel-5°ed"</em>
+                <a href="https://www.amazon.com.br/como-programar-H-M-Deitel/dp/8576050560">https://www.amazon.com.br/como-programar-H-M-Deitel/dp/8576050560</a>
+
+            </p>
+
+            <!--Herança:
+            Apresente o conceito de herança em C++ e como ele permite a criação de uma nova classe com base em
+            uma classe existente.
+            Explique os tipos de herança, como herança pública, privada e protegida.<br><br>
+
+            Polimorfismo:
+            Discuta o polimorfismo, que permite que objetos de diferentes classes sejam tratados de maneira
+            uniforme.
+            Aborde o polimorfismo de compilador e de tempo de execução, mostrando exemplos práticos.<br><br>
+
+            Métodos Virtuais:
+            Introduza métodos virtuais e como eles são usados para alcançar o polimorfismo em C++.
+            Explique a diferença entre métodos virtuais e não virtuais.<br><br>
+
+            Sobrecarga de Operadores:
+            Demonstre como realizar a sobrecarga de operadores em C++, permitindo a definição de comportamento
+            personalizado para operadores com objetos de suas classes.<br><br>
+
+            Construtores e Destrutores:
+            Explique a importância dos construtores e destrutores em C++.
+            Aborde construtores de cópia e operadores de atribuição em contexto de orientação a objetos.<br><br>
+
+            Templates e Programação Genérica:
+            Introduza templates em C++ e como eles são usados para criar classes e funções genéricas.
+            Mostre exemplos de programação genérica.<br><br>
+
+            Gerenciamento de Memória:
+            Aborde o gerenciamento de memória em C++ em relação à criação e destruição de objetos.
+            Destaque a importância do uso apropriado de new e delete, bem como a utilidade dos smart
+            pointers.<br><br>
+
+            Exceções:
+            Explique como o tratamento de exceções em C++ pode ser aplicado em um contexto de orientação a
+            objetos.
+            Mostre como criar e capturar exceções.<br><br>
+
+            Ao explorar esses tópicos, você terá uma visão abrangente dos conceitos de orientação a objetos em
+            C++. Certifique-se de fornecer exemplos práticos para ilustrar cada conceito e tornar o conteúdo
+            mais compreensível.<br><br>-->
+
+
+        </section>
+        
+
+    </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/Conteudo.css">
+    <link rel="stylesheet" href="../_css/body.css">
+    <link rel="stylesheet" href="../_css/Estilo.css">
+
+    <title>REAA</title>
+
+</head>
+
+<body>
+    <div id="interface">
+
+        <header>
+            <h1></h1>
+            <h4></h4>
+        </header>
+        <nav id="menu">
+            <a href="#">Currículo</a>
+            <a href="Categorias.html">Categorias</a>
+            <a href="#">Open Source</a>
+            
+        </nav>
+        <section id="conf-aulas">
+
+            <div id="Aulas">
+                <div id="Aulas">
+                    <hgroup id="saudacoes">
+                        <h2>Alocação dinâmica de memória e o operador new e delete</h2>
+                    </hgroup>
+                    <br>
+                    <br>
+                    <p>
+                        Imagine que você está planejando uma festa surpresa. Você sabe que vai precisar de algumas
+                        cadeiras, mesas e comida, mas não sabe quantas pessoas vão aparecer. Aqui está a questão: você
+                        reserva espaço suficiente para a festa inteira, mesmo que algumas pessoas possam não aparecer?
+                        Ou você prefere ter um plano flexível e reservar apenas o que precisa conforme mais pessoas
+                        confirmam presença?
+                    </p>
+                    <p>
+                        A alocação dinâmica de memória em C++ é como planejar essa festa. Em vez de reservar todos os
+                        lugares e recursos antecipadamente, você vai ajustando conforme as confirmações chegam. Se mais
+                        pessoas confirmam presença, você consegue mais cadeiras e comida. Se menos pessoas aparecem do
+                        que o esperado, você pode devolver o excesso de recursos. Isso mantém o seu planejamento
+                        eficiente e flexível.
+                    </p>
+                    <p>
+                        Portanto, a alocação dinâmica de memória em C++ é como organizar uma festa surpresa, onde você
+                        reserva espaço e recursos à medida que precisa, para garantir que todos se divirtam sem
+                        desperdício.
+                    </p>
+                    <p>
+                        Repare o código abaixo. Para alocar dinamicamente em C++ deve declarar um ponteiro para um tipo,
+                        depois
+                        usar o operador <em>new</em> em conjunto com o tipo de dado seguido de colchetes para determinar
+                        quanto de memória
+                        vai ter ser alocado com aquele tipo de dado.
+                    </p>
+                    <p>
+                        Quando o programa chegar no final, deve-se desalocar este espaço usando o operador <em>delete[]
+                            ponteiro</em>.
+                    </p>
+                    <pre>
+                        <code>
+
+                            #include &lt;iostream&gt;
+                            using namespace std;
+                            <font color="gray">//=====================
+                            //- estrutura--</font>
+                            struct Aluno
+                            {
+                                string anome;
+                                int matricula;
+                                int notas[3];
+                                
+                            };
+                            <font color="gray">//=====================
+                            //- Fim da estrutura--
+                            </font>
+                                
+                            int main()
+                            {
+
+                            cout &lt;&lt; "Hello REAA!" &lt;&lt; endl;
+                            int *P_inteiro   = <font color="blue">new</font> int[4];   <font color="gray">//Aloca memoria para 4 inteiros</font>
+                            int *P_variavel  = new int;
+                            double *P_double = <font color="blue">new</font> double[4];<font color="gray">//Aloca memoria para 4 double</font>
+                            Aluno *P_struct  = <font color="blue">new</font> Aluno[4]; <font color="gray">//Aloca memoria para 4 estruturas do tipo Aluno</font>
+                            
+                            <font color="gray">//Insersão de valores para P_inteiro</font>
+                            <font color="gray">//Insersão de valores para P_double</font>
+                            <font color="gray">//Insersão de valores para P_struct</font>
+                            
+                            delete[] P_inteiro;<font color="gray">//Naturalmente</font>
+                            delete[] P_double; <font color="gray">//Naturalmente</font>
+                            delete[] P_struct; <font color="gray">//Naturalmente</font>
+                            
+                            <font color="gray">//OBS!  Se eu uso <em>new &lt;tipo&gt;[]</em>. Então eu uso <em>delete[]&lt;tipo&gt;</em></font>
+                            <font color="gray">//      Se eu uso apenas <em>new</em>. Então eu uso apenas <em>delete</em></font>
+                            
+                            delete P_variavel; <font color="gray">//Não usei colchetes por que aloquei apenas uma variável</font>
+
+                            return 0;
+                        }
+                        
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <p>
+
+                O programa acima demonstra um exemplo simples de declaração de alocação de momória dinamincamente.
+                A baixo cosntrui ooutro código para demostrar o bom uso da alocação dinamica.
+
+            </p>
+            <pre>
+    <code>
+                            #include &lt;iostream&gt;
+
+                            using namespace std;
+            
+                            #include &lt;cstring&gt;
+                            using std::string;
+            
+            
+                            <font color="gray">//=====================
+                            //- estrutura--</font>
+                            struct Aluno
+                            {
+                                string anome;
+                                int matricula;
+                                int notas[3];
+                            
+                            };
+                            <font color="gray">//=====================
+                            //- Fim da estrutura--</font>
+                            
+                            int main()
+                            {
+                                cout &lt;&lt; "Hello Reaa!" &lt;&lt; endl;
+                            
+                            
+                            
+                                Aluno *ponteiro=new Aluno[3];<font color="gray">//Aloco um vetor de 3 posições que contém um estrutura de um aluno</font>
+                                                             <font color="gray">//O ponteiro me retorna a referência de onde começa a alocação 
+                                                             //na memória</font>
+                                ponteiro[0].anome="Lucas";
+                                ponteiro[0].matricula=1234;
+                                ponteiro[0].notas[0]=5;
+                                ponteiro[0].notas[1]=8;
+                                ponteiro[0].notas[2]=10;
+                            
+                                ponteiro[1].anome="Ana Julia";
+                                ponteiro[1].matricula=6532;
+                                ponteiro[1].notas[0]=6;
+                                ponteiro[1].notas[1]=2;
+                                ponteiro[1].notas[2]=9;
+                            
+                                ponteiro[2].anome="Roberta";
+                                ponteiro[2].matricula=582;
+                                ponteiro[2].notas[0]=4;
+                                ponteiro[2].notas[1]=9;
+                                ponteiro[2].notas[2]=10;
+                            cout &lt;&lt; endl;
+                            
+                                cout &lt;&lt; "Aluno 0: " &lt;&lt; endl;
+                                cout &lt;&lt; "     Nome: " &lt;&lt; ponteiro[0].anome &lt;&lt; endl;
+                                cout &lt;&lt; "matricula: " &lt;&lt; ponteiro[0].matricula &lt;&lt; endl;
+                                cout &lt;&lt; "   nota 1: " &lt;&lt; ponteiro[0].notas[0] &lt;&lt; endl;
+                                cout &lt;&lt; "   nota 2: " &lt;&lt; ponteiro[0].notas[1] &lt;&lt; endl;
+                                cout &lt;&lt; "   nota 3: " &lt;&lt; ponteiro[0].notas[2]&lt;&lt; endl;
+                                
+                            cout &lt;&lt; endl;
+                                cout &lt;&lt; "Aluno 1: " &lt;&lt; endl;
+                                cout &lt;&lt; "     Nome: " &lt;&lt; ponteiro[1].anome &lt;&lt; endl;
+                                cout &lt;&lt; "matricula: " &lt;&lt; ponteiro[1].matricula &lt;&lt; endl;
+                                cout &lt;&lt; "   nota 1: " &lt;&lt; ponteiro[1].notas[0] &lt;&lt; endl;
+                                cout &lt;&lt; "   nota 2: " &lt;&lt; ponteiro[1].notas[1] &lt;&lt; endl;
+                                cout &lt;&lt; "   nota 3: " &lt;&lt; ponteiro[1].notas[2]&lt;&lt; endl;
+                            
+                            cout &lt;&lt; endl;
+                            
+                                cout &lt;&lt; "Aluno 2: " &lt;&lt; endl;
+                                cout &lt;&lt; "     Nome: " &lt;&lt; ponteiro[2].anome &lt;&lt; endl;
+                                cout &lt;&lt; "matricula: " &lt;&lt; ponteiro[2].matricula &lt;&lt; endl;
+                                cout &lt;&lt; "   nota 1: " &lt;&lt; ponteiro[2].notas[0] &lt;&lt; endl;
+                                cout &lt;&lt; "   nota 2: " &lt;&lt; ponteiro[2].notas[1] &lt;&lt; endl;
+                                cout &lt;&lt; "   nota 3: " &lt;&lt; ponteiro[2].notas[2]&lt;&lt; endl;
+                            
+                            
+                            
+                                delete[] ponteiro;//Uso colchetes porque usei colchetes junto com new
+                                if(!ponteiro)   //crio á unha, um sistema de proteção
+                                    cout &lt;&lt; "desalocado\n"; <font color="gray">//não usei chaves no if, por que não é um bloco de</font>
+                                                            <font color="gray">//códigos e sim apenas uma linha</font>
+                                cout &lt;&lt; "nao desalocado\n";<font color="gray">//tem um else escondido aqui</font>
+            
+    </code>
+</pre>
+
+            <p>
+                Legal néh! o perador new e delete no C++ é mais abstrato que o malloc na linguagem C, ncessitando
+                especificar os bytes
+                de do determinado dado a ser alocado.
+            </p>
+            <p>
+                Beleza! agora já sabemos alocar dinamicamente vetores e vairáveis, mas sabemos que deemos tomar muito
+                cuidado para
+                não vazer memória. podemos usar o objeto nothrow como mecanismo de proteção na memória se caso exeder
+                vazamento. Este
+                comando fecha o programa antes de corromper o hardware.
+            </p>
+            <p>
+                Com o código comentado a baixo, demonstro uma inicialização de elementos no vetor <em>*vetor</em> com
+                apenas
+                três valores, veja que não uso o operador de atribuição. Como o vetor tem 30 posições então o restante
+                será preenchido
+                com zeros.
+            </p>
+            <p>
+                Se inverter o comentário, o operador <font color="green">std::nothrow</font> proteje contra vazamento de
+                memória.
+            </p>
+            <pre>
+    <code>
+                            #include &lt;iostream&gt;
+
+                            using namespace std;
+                            
+                            int main()
+                            {
+                                cout &lt;&lt; "Hello REAA!" &lt;&lt; endl;
+                            
+                            
+                                <font color="gray">//int *vetor=new (std::nothrow) int[3000000000000000000000000000];//causa um erro</font>
+                                int *vetor=new (std::nothrow) int[30]{10, 20, 33};//inicialização de vetor
+                            
+                                if(!vetor)
+                                    cout &lt;&lt; "Erro: Ao alocar memoria\n";
+                                <font color="gray">/*
+                                for(int i=0; i<50; i++)
+                                {
+                                    vetor[i]=i+2;
+                                }
+                                */</font>
+                            
+                                for(int i=0; i<30; i++)
+                                {
+                                    cout &lt;&lt; "valor: " &lt;&lt; vetor[i] &lt;&lt; endl;
+                                }                            
+                            
+                                delete[]vetor;                            
+                                return 0;
+                            }
+
+            
+    </code>
+</pre>
+            <figure class="Foto-AllanKay">
+                <img src="../_imagens/Cod_Alocacaon_nothrou.PNG" />
+                <figcaption>
+                    <img src="../_imagens/ResultadoAlocacaon_nothrou.PNG" />
+                </figcaption>
+            </figure>
+            <p>
+                Vamos agora descomentar a linha do ponteiro para o vetor, exatamente onde está o objeto
+                <em>std::nothrou</em>
+                . Também vamos descomentar o laço <em>for()</em> para caso a alocacao for bem sucedida, e por fim
+                devemos comentar a linha abaixo
+                de onde foi coloado o <em>std::nothrou</em>
+            </p>
+            <figure class="Foto-AllanKay">
+                <img src="../_imagens/TestandoVazamentoMemoria.png" />
+                <figcaption>
+                    <img src="../_imagens/erroAlocacaoMemoria.PNG" />
+                </figcaption>
+            </figure>
+            <p>
+                Este é um exemplo básico de proteger a memória contra vazamentos, é importante usar este tipo de
+                mecanismo
+                em sistemas embarcados, pois a memória é limitada.
+            </p>
+
+
+        </section>
+        
+
+    </div>
+    
+</body>
+
+</html>

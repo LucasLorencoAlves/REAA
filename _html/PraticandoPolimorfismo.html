@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>REAA</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" type='text/css' href="Estilo.css">
+
+    <script src='main.js'></script>
+
+
+</head>
+
+<body>
+    <div id="interface_praticando">
+
+        <header id="cabecalho">
+            <hgroup id="logo-cabecalho">
+                <img src="REAA-Logo001.PNG">
+            </hgroup>
+            <nav id="menu">
+                <ul>
+                    <h2>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="conteudo.html">CONTEUDO</a></li>
+                    </h2>
+                </ul>
+            </nav>
+        </header>
+        <section id="conf-aulas">
+            <div id="Aulas">
+            </div>
+        </section>  
+    </div>
+
+
+    <!--base.hpp-->
+    <div id="interface_praticando">
+        <pre>
+            <code>
+            <font color="gray">
+                 Agora você já tem conhecimentos avançados para analizar o código abaixo. Copia e cola numa IDE, compile e roda
+                para ver o resultado e se possível reencreva o programa para concretizar os conhecimentos adquiridos.
+                 Exercicite este conhecimento, pois, daqui pra frente a caixa de ferramentas começa a ficar maior.
+            </font>
+            </code>
+        </pre>
+            
+        
+    </div>
+    <div id="interface_praticando">
+
+           <pre>
+            <code>
+                
+                // CommissionEmployee.h
+                // Classe CommissionEmployee representa um empregado comissionado.
+                // classe base
+
+                #ifndef COMMISSION_H
+                #define COMMISSION_H
+                
+                #include &lt;string&gt; // classe string padrão C++
+                using std::string;
+                
+                class CommissionEmployee
+                {
+                public:
+                    CommissionEmployee( const string &, const string &, const string &, //construtor
+                                        double = 0.0, double = 0.0 );
+                
+                    void   setFirstName( const string & );                              //configura o nome
+                    string getFirstName() const;                                        // retorna o nome
+                
+                    void   setLastName( const string & );                               // configura o sobrenome
+                    string getLastName() const;                                         // retorna o sobrenome
+                
+                    void   setSocialSecurityNumber( const string & );                   // configura o SSN
+                    string getSocialSecurityNumber() const;                             // retorna o SSN
+                
+                    void   setGrossSales( double );                                     // configura a quantidade de vendas brutas
+                    double getGrossSales() const;                                       // retorna a quantidade de vendas brutas
+                
+                    void   setCommissionRate( double );                                 // configura a taxa de comissão
+                    double getCommissionRate() const;                                   // retorna a taxa de comissão
+                
+                    double earnings() const;                                            // calcula os rendimentos
+                    void   print() const;                                               // imprime o objeto CommissionEmployee
+                private:
+                    string firstName;
+                    string lastName;
+                    string socialSecurityNumber;
+                    double grossSales;                                                  // vendas brutas semanais
+                    double commissionRate;                                              // porcentagem da comissão
+                }; // fim da classe CommissionEmployee
+                
+                #endif
+            </code>
+           </pre>
+
+    </div>
+    <!--Fim-->
+
+
+        <div id="interface_praticando">
+
+            <pre>
+             <code>
+                 
+                #ifndef DERIVADA_H
+                #define DERIVADA_H
+                #include "base.hpp"                                                     //incluir a classe base dentro do arquivo da classe derivada
+                #include &lt;string&gt;
+                using std::string;
+     
+     
+                class BasePlusCommissionEmployee : public CommissionEmployee
+                {
+                    public:
+                    BasePlusCommissionEmployee( const string &, const string &,
+                                                const string &, double = 0.0, double = 0.0, double = 0.0 );
+     
+                void setBaseSalary( double );                                           // configura o salário-base
+                double getBaseSalary() const;                                           // retorna o salário-base
+     
+                double earnings() const;                                                // calcula os rendimentos
+                void print() const;                                                     // imprime o objeto BasePlusCommissionEmployee
+                    private:
+                       double baseSalary;                                               // salário-base
+                }; // fim da classe BasePlusCommissionEmployee
+     
+                #endif // DERIVADA_H
+     
+ 
+             </code>
+            </pre>             
+    </div>
+
+
+        <div id="interface_praticando">
+
+            <pre>
+             <code>
+                 
+                // CommissionEmployee.cpp
+                // Definições de função-membro da classe CommissionEmployee.
+                #include &lt;iostream&gt;
+                using std::cout;
+                
+                #include "base.hpp" // definição da classe CommissionEmployee
+                
+                
+                CommissionEmployee::CommissionEmployee(                                  // construtor
+                    const string &first, const string &last, const string &ssn,
+                    double sales, double rate )
+                
+                    : firstName( first ), lastName( last ), socialSecurityNumber( ssn )
+                {
+                    setGrossSales( sales ); // valida e armazena as vendas brutas
+                    setCommissionRate( rate ); // valida e armazena a taxa de comissão
+                } 
+                // fim do construtor CommissionEmployee
+                
+                // configura o nome
+                void CommissionEmployee::setFirstName( const string &first )
+                {
+                    firstName = first; // deve validar
+                }
+                // fim da função setFirstName
+                
+                // retorna o nome
+                string CommissionEmployee::getFirstName() const
+                {
+                    return firstName;
+                }
+                // fim da função getFirstName
+                
+                // configura o sobrenome
+                void CommissionEmployee::setLastName( const string &last )
+                {
+                    lastName = last; // deve validar
+                } 
+                // fim da função setLastName
+                
+                // retorna o sobrenome
+                string CommissionEmployee::getLastName() const
+                {
+                    return lastName;
+                } 
+                // fim da função getLastName
+                
+                // configura o SSN
+                void CommissionEmployee::setSocialSecurityNumber( const string &ssn )
+                {
+                    socialSecurityNumber = ssn; // deve validar
+                } 
+                // fim da função setSocialSecurityNumber
+                
+                // retorna o SSN
+                string CommissionEmployee::getSocialSecurityNumber() const
+                {
+                    return socialSecurityNumber;
+                } 
+                // fim da função getSocialSecurityNumber
+                
+                // configura a quantidade de vendas brutas
+                void CommissionEmployee::setGrossSales( double sales )
+                {
+                    grossSales = ( sales &lt; 0.0 ) ? 0.0 : sales;
+                } 
+                // fim da função setGrossSales
+                
+                // retorna a quantidade de vendas brutas
+                double CommissionEmployee::getGrossSales() const
+                {
+                    return grossSales;
+                } 
+                // fim da função getGrossSales
+                
+                // configura a taxa de comissão
+                void CommissionEmployee::setCommissionRate( double rate )
+                {
+                    commissionRate = ( rate > 0.0 && rate &lt; 1.0 ) ? rate : 0.0;
+                } 
+                // fim da função setCommissionRate
+                
+                // retorna a taxa de comissão
+                double CommissionEmployee::getCommissionRate() const
+                {
+                    return commissionRate;
+                } 
+                // fim da função getCommissionRate
+                
+                // calcula os rendimentos
+                double CommissionEmployee::earnings() const
+                {
+                    return getCommissionRate() * getGrossSales();
+                } 
+                // fim da função earnings
+                
+                // imprime o objeto CommissionEmployee
+                void CommissionEmployee::print() const
+                {
+                cout &lt;&lt; "commission employee:"
+                     &lt;&lt; getFirstName() &lt;&lt; ' ' &lt;&lt; getLastName()
+                     &lt;&lt; "\nsocial security number:"
+                     &lt;&lt; getSocialSecurityNumber()
+                     &lt;&lt; "\ngross sales:"
+                     &lt;&lt; getGrossSales()
+                     &lt;&lt; "\ncommission rate:"
+                     &lt;&lt; getCommissionRate();
+                } 
+                // fim da função print 
+ 
+             </code>
+            </pre>  
+    </div>
+    <div id="interface_praticando">
+        <pre>
+            <code>
+               #include &lt;iostream&gt;
+               using std::cout;    
+               #include "Derivada.hpp"
+
+
+               BasePlusCommissionEmployee::BasePlusCommissionEmployee(const string &first, const string &last, const string &ssn,
+                                                                      double sales, double rate, double salary )
+                
+                : CommissionEmployee( first, last, ssn, sales, rate )                   // chama explicitamente o construtor da classe básica
+                {
+                setBaseSalary( salary );                                                // valida e armazena o salário-base
+                } 
+                // fim do construtor BasePlusCommissionEmployee
+               
+                // configura o salário-base
+                void BasePlusCommissionEmployee::setBaseSalary( double salary )
+                {
+                baseSalary = ( salary &lt;0.0 ) ? 0.0 : salary;
+                } 
+                // fim da função setBaseSalary
+               
+                // retorna o salário-base
+                double BasePlusCommissionEmployee::getBaseSalary() const
+                {
+                return baseSalary;
+                } 
+                // fim da função getBaseSalary
+               
+                // calcula os rendimentos
+                double BasePlusCommissionEmployee::earnings() const
+                {
+                return getBaseSalary() + CommissionEmployee::earnings();
+                } 
+                // fim da função earnings
+               
+                // imprime o objeto BasePlusCommissionEmployee
+                void BasePlusCommissionEmployee::print() const
+                {
+                cout &lt;&lt; "base-salaried ";
+               
+                
+                CommissionEmployee::print();                                           // invoca a função print de CommissionEmployee
+               
+                cout &lt;&lt; "\nbase salary: " &lt;&lt; getBaseSalary();
+                } 
+                // fim da função print
+               
+            </code>
+        </pre>
+    </div>
+    <div id="interface_praticando">
+        <pre>
+            <code>
+               #include &lt;iostream&gt;
+               using namespace std;
+               #include "Derivada.hpp"
+               #include "base.hpp"
+               
+               #include &lt;iomanip&gt
+               using std::setprecision;
+               
+               int main()
+               {
+                   cout &lt;&lt; "Hello Reaa!" &lt;&lt; endl;
+                   
+                   CommissionEmployee comissao(                                         // cria objeto de classe básica
+                       "Lucas",
+                       "Alves",
+                       "222-33-321",
+                       1000,
+                       0.11
+                   );
+                   //Fim objeto de classe básica
+
+                   // cria ponteiro de classe básica
+                   CommissionEmployee *comissaoPtr=0;                                   //tem que referenciar zero
+               
+               
+                   // cria objeto de classe derivada
+                   BasePlusCommissionEmployee comissaoFuncionario("Mr:",
+                                                                  "jones",
+                                                                  "111-11-000",
+                                                                   2000,
+                                                                   0.98,
+                                                                   300
+                                                                 );
+
+                   //Fim objeto de classe derivada
+                   BasePlusCommissionEmployee *comissaoFuncionarioPtr=0;               //tem que referenciar zero
+               
+                   
+                   
+                   cout&lt;&lt;fixed&lt;&lt;setprecision(2);                                       //configura a formatação de saida de ponnto flutuante
+               
+                   
+                   cout &lt;&lt; "Print base-class and derived-class objects:\n\n";          // gera saída dos objetos commissionEmployee e basePlusCommissionEmployee
+               
+                   comissao.print();                                                   //invoca o print da classe basica
+                   cout &lt;&lt; "\n\n";
+                   comissaoFuncionario.print();                                        //invoca o print da classe derivada
+
+
+               
+                   // aponta o ponteiro de classe básica para o objeto de classe básica e imprime
+                   comissaoPtr = &comissao;                                            // perfeitamente natural
+                   cout &lt;&lt; "\n\n\nCalling print with base-class pointer to "
+                        &lt;&lt; "\nbase-class object invokes base-class print function:\n\n";
+                   comissaoPtr->print();
+
+
+               
+                   // aponta o ponteiro de classe derivada para o objeto de classe derivada e imprime
+                   comissaoPtr = &comissao;                                            // natural
+                   cout &lt;&lt; "\n\n\nCalling print with derived-class pointer to "
+                        &lt;&lt; "\nderived-class object invokes derived-class "
+                        &lt;&lt; "print function:\n\n";
+                   comissaoFuncionarioPtr->print();                                    // invoca print da classe derivada
+               
+                   // aponta ponteiro de classe básica para o objeto de classe derivada e imprime
+                   comissaoPtr = &comissaoFuncionario;
+                   cout &lt;&lt; "\n\n\nCalling print with base-class pointer to"
+                        &lt;&lt; "derived-class object\ninvokes base-class print"
+                        &lt;&lt; "function on that derived-class object:\n\n";
+                   comissaoPtr->print();                                               // invoca print da classe básica
+                   cout &lt;&lt; endl;
+                   return 0;
+               }
+            </code>
+        </pre>
+    </div>
+
+
+</body>
+
+<!--Rodapé-->
+<div id="interface_praticando">
+
+ <footer id="rodape">
+    <p>
+        by Lucas Lorenço Alves | senoratec.io@gmail.com |
+        <a href="https://www.linkedin.com/in/lucas-lorenço-alves-4206b9201/" target="_blank">linkedin</a>
+    </p>
+</footer>
+</div>
+</html>

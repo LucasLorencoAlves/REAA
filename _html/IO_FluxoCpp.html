@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/Conteudo.css">
+    <link rel="stylesheet" href="../_css/body.css">
+    <link rel="stylesheet" href="../_css/Estilo.css">
+
+    <title>REAA</title>
+
+</head>
+
+<body>
+    <div id="interface">
+
+        <header>
+            <h1></h1>
+            <h4></h4>
+        </header>
+        <nav id="menu">
+            <a href="#">Currículo</a>
+            <a href="Categorias.html">Categorias</a>
+            <a href="#">Open Source</a>
+            
+        </nav>
+        <section id="conf-aulas">
+
+            <div id="Aulas">
+                <div id="Aulas">
+                    <hgroup id="saudacoes">
+                        <h2>Entra e saída de dados (Fluxos de dados)</h2>
+                    </hgroup>
+                    <br>
+                    <br>
+                    <p>
+                        Este assunto é um bônus de tudo que abordamos até agora e servirá muito quando entrar no assunto
+                        de
+                        processamento de arquivos. Será útil para formatar os dados de forma limpa e clara para o
+                        usuário.
+
+                    </p>
+                    <p>
+                        Entra e saído de fluxo de dados é como o programa interage com o ambiente externo (usuário).
+                        Veremos neste capítulo uma baordagem do inserção e extração de dados como já haviamos usado
+                        anteriormente
+                        <font color="gray"><em>cin</em> e <em>cout</em></font>, também veremos como formatar de forma
+                        clara os dados no console (a tela que abre ao rodar o programa)
+                    </p>
+                    <hgroup id="saudacoes">
+                        <h2>Input (Entrada de dados)</h2>
+                        <br>
+                    </hgroup>
+                    <p>
+                        O <em>cin</em> é um objeto do iostream que extrai dados do teclado usando o o perador de
+                        inserção de fluxo <em>>></em>
+                        <br>Ex: <br>
+                        cin >> var_int;
+                    </p>
+
+                    È possível fazer encadeamento de varias <em>cin >></em> por exemplo
+                    <pre>
+                        <code>
+                            int A, B, C;
+                            cout &lt;&lt; "Digite: " &lt;&lt; endl;
+                            <font color="blue">cin &gt;&gt; A &gt;&gt; B &gt;&gt; C  ;</font>
+                            cout &lt;&lt; "[A]: " &lt;&lt; A &lt;&lt; endl;
+                            cout &lt;&lt; "[B]: " &lt;&lt; B &lt;&lt; endl;
+                            cout &lt;&lt; "[C]: " &lt;&lt; C &lt;&lt; endl;
+                            
+                        </code>
+                    </pre>
+                    <figure class="Foto-AllanKay">
+                        <img src="../_imagens/Screenshot from 2024-02-24 14-16-57.png" />
+                        <figcaption>
+                            <img src="../_imagens/Screenshot from 2024-02-24 14-10-17.png" />
+                        </figcaption>
+                    </figure>
+                    <p>
+                        Outras peculiaridades usando o operador de inserção é usar o membro de dados .get() do
+                        <em>cin</em> para capturar um caractere.
+                    </p>
+                    <pre>
+                        <code>
+                            char c='\0';
+
+                            cout &gt;&gt;"Digite: " &gt;&gt; endl;
+
+                            <font color="blue">c= cin.get();</font>       
+
+                            cout &gt;&gt; "digitado: " &gt;&gt; c &gt;&gt; endl;
+                        </code>
+                    </pre>
+                    <figure class="Foto-AllanKay">
+                        <img src="../_imagens/Screenshot from 2024-02-24 15-11-34.png" />
+                        <figcaption>
+                            <img src="../_imagens/Screenshot from 2024-02-24 15-12-36.png" />
+                        </figcaption>
+                    </figure>
+                    <p>
+                        Utilizar o <em>cin</em> para capturar uma cadeia de caracteres ocasiona na perda de
+                        dados se caso ter um espaço inserido. Por exemplo <br>
+                    <pre>
+                            <code>
+                                char c[15];
+
+                                cout &gt;&gt; "Digite: " &gt;&gt; endl;
+
+                                cin >> c;
+
+                                cout &gt;&gt; "digitado: " &gt;&gt; c &gt;&gt; endl;
+                            </code>
+                        </pre>
+                    </p>
+                    <figure class="Foto-AllanKay">
+                        <img src="../_imagens/Screenshot from 2024-02-24 16-11-15.png" />
+                        <figcaption>
+                            <img src="../_imagens/Screenshot from 2024-02-24 16-12-03.png" />
+                        </figcaption>
+                    </figure>
+                    <p>
+                        Para contornar este problema de perder dados por causa do espaço você pode
+                        usar <em>cin.get(vetor_caracteres, Tam_buffer)</em>. Por exemplo <br>
+                    <pre>
+                            <code>
+                                int sizeBuffer=20;
+                                char nome[15];
+                            
+                                cout &gt;&gt; "Digite: " &gt;&gt; endl;
+                            
+                                <font color="blue">cin.getline(nome, sizeBuffer);</font>
+                            
+                                cout &gt;&gt; "digitado: " &gt;&gt; nome &gt;&gt; endl;
+                            </code>
+                        </pre>
+                    </p>
+                    <figure class="Foto-AllanKay">
+                        <img src="../_imagens/Screenshot from 2024-02-24 16-22-33.png" />
+                        <figcaption>
+                            <img src="../_imagens/Screenshot from 2024-02-24 16-24-47.png" />
+                        </figcaption>
+                    </figure>
+                    <p>
+                        Existem inúmeros membros de dados para serem explorados como entrada e saída de dados na
+                        linguagem C++
+                        . Sugiro visitar a lista completa de arquivos de cabeçalho da biblioteca padrão do C++. Aqui
+                        deixei apenas um
+                        uma breve sobre como organizar os dados para dar entrada pelo teclado e como organizar os dados
+                        na saida.
+                    </p>
+                    <p>
+                        Visite o site oficial da Microsoft, na pagina <em>Arquivos de cabeçalho da biblioteca padrão
+                            C++</em> <br>
+                        <a href="https://learn.microsoft.com/pt-br/cpp/standard-library/what-a-stream-is?view=msvc-170">Arquivos
+                            de cabeçalho da biblioteca padrão C++</a>
+                    </p>
+                    <br>
+                    <hgroup id="saudacoes">
+                        <h2>Output (saida de dados)</h2>
+                    </hgroup>
+                    <br>
+                    <p>
+                        Assim como temos o objeto <em>cin</em> que manipula o fluxo de entrada através dos membros de
+                        dados
+                        <em>get(), getline()..entre outros</em>. Temos também os manipuladores de fluxo de dados de
+                        saída.
+                        Eles ficilitam a organização dos dados na tela como <br><br>
+                        <font color="gray">-Formatar a largura de campo.</font> <br>
+                        <font color="gray">-Configurar dados com precisão de casas decimais.</font> <br>
+                        <font color="gray">-Esvaziar fluxos e inserir uma nova linha do fluxo de saída</font>.
+                        <font color="gray">-Incluir um caracter nulo no fluxo de saída e pular espaço em branco no fluxo
+                            de entrada.</font>
+                        <br><br>
+                        Veremos alguns desses muito usuais para facilitar na
+                        desenvoltura dos nossos programas.
+                    </p>
+                    <p>
+                        Para determinar as casa de precisão de um número usamos o membro de dado <em>setprecision()</em>
+                        da classe padrão <em>iomanip</em> em conjunto com o minpulador de fluxo <em>fixed</em> do
+                        <em>iostream</em>.
+                    <pre>
+                            <code>
+                                #include &lt; iostream &gt;
+                                using namespace std;//fixed está em iostream
+                                #include &lt; iomanip &gt;
+                                using std::setprecision;
+                                
+                                int main()
+                                {
+                                    cout &lt;&lt; "Hello REAA!" &lt;&lt; endl;
+                                    cout &lt;&lt; <font color="blue">fixed</font> &lt;&lt; endl;
+                                    double pi=3.24519966;
+                                    cout &lt;&lt; "Pi: " &lt;&lt;<font color="blue"> setprecision(2)</font>  &lt;&lt; pi &lt;&lt; endl;
+                                
+                                    return 0;
+                                }
+                            </code>
+                        </pre>
+                    <figure class="Foto-AllanKay">
+                        <img src="../_imagens/Screenshot from 2024-02-25 14-00-38.png" />
+                        <figcaption>
+                            <img src="../_imagens/Screenshot from 2024-02-25 14-01-58.png" />
+                        </figcaption>
+                    </figure>
+                    </p>
+                    <P>
+                        Podemos formatar a largura do campo, usando o membro de dado <em>setw()</em>
+                        para isso incluímos o <em>iomanip</em> e destacamos a inclusão <em>using std::setw;</em>
+
+                    </P>
+                    <p>
+                        O setw() desloca desloca a ultima casa do número para a próxima casa livre, caso tiver ocupada
+                        não surgirá o efeito. Veja o exemplo.
+
+                    <pre>
+                            <code>
+                                #include &lt iostream &gt
+                                using namespace std;//fixed está em iostream
+                                #include &lt iomanip &gt
+                                using std::setprecision;
+                                <font color="blue">using std::setw;</font>
+                                
+                                int main()
+                                {
+                                    cout &lt;&lt; "Hello REAA!" &lt;&lt; endl;
+                                
+                                    int A= 123456789,
+                                        B= 123456789,
+                                        C= 123456789,
+                                        D= 123456789,
+                                        E= 123456789,
+                                        F= 123456789;
+                                
+                                    cout &lt;&lt; <font color="blue">setw(9)</font>  &lt;&lt; A &lt;&lt; endl;//vEJA QUE A NONA CASA ESTÁ NO MESMO LUGAR NOCONSOLE
+                                    cout &lt;&lt; <font color="blue">setw(10)</font> &lt;&lt; B &lt;&lt; endl;//AQUI JÁ COMEÇA A DESLOCAR PARA A DÉCIMA CASA
+                                    cout &lt;&lt; <font color="blue">setw(11)</font> &lt;&lt; C &lt;&lt; endl;//NATURAL
+                                    cout &lt;&lt; <font color="blue">setw(12)</font> &lt;&lt; D &lt;&lt; endl;//NATURAL
+                                    cout &lt;&lt; <font color="blue">setw(13)</font> &lt;&lt; E &lt;&lt; endl;//NATURAL
+                                    cout &lt;&lt; <font color="blue">setw(14)</font> &lt;&lt; F &lt;&lt; endl;//NATURAL
+                                                                
+                                    return 0;
+                                }
+                                
+                            </code>
+                        </pre>
+                    <figure class="Foto-AllanKay">
+                        <img src="../_imagens/Screenshot from 2024-02-25 14-32-44.png" />
+                        <figcaption>
+                            <img src="../_imagens/Screenshot from 2024-02-25 14-33-38.png" />
+                        </figcaption>
+                    </figure>
+                    </p>
+                    <p>
+                        È possível criar seu próprio monipulador de fluxo de dados, personalizar as próprias funções
+                        nos dá muitas vantagens.
+                    </p>
+                    <p>
+                        Veremos que com o ostream podemos fazer isso da seguinte forma.
+                    <pre>
+                            <code>
+                                #include &lt;iostream&gt;
+                                using namespace std;//fixed está em iostream
+                                                    //ostream está em iostream
+                                
+                                #include &lt;iomanip&gt;
+                                using std::setw;
+                                
+                                ostream &tab(ostream &manip);
+                                
+                                
+                                int main()
+                                {
+                                    cout &lt;&lt; "Hello REAA!" &lt;&lt; endl;
+                                
+                                    char A='A',
+                                         B='B',
+                                         C='C';
+                                    cout &lt;&lt; A &lt;&lt; tab &lt;&lt; B &lt;&lt; tab &lt;&lt; C &lt;&lt; endl;
+                                
+                                    return 0;
+                                }
+                                
+                                
+                                <font color="blue">ostream &tab(ostream &manip)</font>
+                                {
+                                    return manip &lt;&lt; "\t" ; <font color="gray">//insere a tabulação no endereço de manip e retorna a tabulação</font>
+                                    <font color="gray">//Você pode modificar com outros caracteres</font>
+                                    <font color="gray">//Ex: '\a que é um bip sonoro'</font>
+                                    <font color="gray">//Ex: '\n nova linhas'</font>
+                                    <font color="gray">//Ex: "============"</font>
+                                }
+                                
+                            </code>
+                        </pre>
+                    <figure class="Foto-AllanKay">
+                        <img src="../_imagens/Screenshot from 2024-02-25 15-03-05.png" />
+                        <figcaption>
+                            <img src="../_imagens/Screenshot from 2024-02-25 15-03-48.png" />
+                        </figcaption>
+                    </figure>
+                    </p>
+                </div>
+            </div>
+            <p>
+                Com isso já podemos criar alguma coisa útil para treinar entrada e saída de dados formatados. Sabendo
+                dimencionar largura de campo,
+                preenchimento de campo vazio e determinar a precisão de números decimais, já está muito bem evoluído.
+            </p>
+            <p>
+                Confira o código que eu escrevi
+                para demostrar a empregabilidade desses comandos e como organizados podem ficar as informaçoes
+                vindo de um barramento serial por exemplo.
+            </p>
+            <a href="https://github.com/GitHubAlves150/Exercise-in-Program-C-Com-Classe/blob/main/PI_SAida_Fluxo/main.cpp">Ingresso para o CINE-MA</a>
+
+        </section>
+        
+
+    </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/Conteudo.css">
+    <link rel="stylesheet" href="../_css/body.css">
+    <link rel="stylesheet" href="../_css/Estilo.css">
+
+    <title>REAA</title>
+
+</head>
+
+<body>
+    <div id="interface">
+
+        <header>
+            <h1></h1>
+            <h4></h4>
+        </header>
+        <nav id="menu">
+            <a href="#">Currículo</a>
+            <a href="Categorias.html">Categorias</a>
+            <a href="#">Open Source</a>
+            
+        </nav>
+        <section id="conf-aulas">
+
+            <div id="Aulas">
+                <div id="Aulas">
+                    <hgroup id="saudacoes">
+                        <h2>Classificação</h2>
+                    </hgroup>
+                    <br>
+                    <br>
+                    <p>
+                        Usarei neste tópico a classificação de dados o MergeSort, por se tratar
+                        de um algoritimo estável e e de tempo de execução linear.
+                        È interessante entender o logaritimo Big-O, que explica o quão crescente é um algoritimo
+                        de divisão recursiva tem ao longo do tempo, então bora lá ao menos para ter uma noção de como é.
+                    </p>
+                    <hgroup id="saudacoes">
+                        <h2>O que é notação Big-O?</h2>
+                    </hgroup>
+                    <p>
+                        A notação Big-O é uma forma de expressar o comportamento assintótico de um algoritmo,
+                        ou seja, como ele se comporta à medida que o tamanho da entrada cresce.
+                    </p>
+                    <p>
+                        O O(nlog⁡n)O(nlogn) indica que o tempo de execução de um algoritmo cresce proporcionalmente ao
+                        tamanho da entrada multiplicado pelo logaritmo do tamanho da entrada. Isso é comum em algoritmos
+                        que dividem o problema em partes menores
+                        e depois combinam essas partes, como o MergeSort e o QuickSort (no caso médio).
+                    </p>
+
+                    <p>
+                        O MergeSort por exemplo, ele divide o array em duas metades até que cada metade tenha apenas um
+                        elemento. Cada divisão custa
+                        <i>n (log n) </i> etapas. Depois, ele combina os elementos de volta em <i>n</i> operações,
+                        resultando em O(nlog⁡n)O(nlogn).
+                    </p>
+                    <p>
+                        Vou dar um exemplo básico que tirei no chat GPT, me ajudou muito a compreender o significado da
+                        complexidade
+                        de um algoritimo de divisão. <br><br>
+
+                        <strong>Cortando uma pizza:</strong> <br><br>
+                        Suponha que você está cortando uma pizza em pedaços e cada vez você corta ao meio: <br>
+                        1° Se você tem 1 pizza e quer cortá-la em 16 pedaços: <br>
+                        >> Primeiro corte → 2 pedaços. <br>
+                        >> Segundo corte  → 4 pedaços. <br>
+                        >> Terceiro corte → 8 pedaços. <br>
+                        >> Quarto corte   → 16 pedaços. <br><br>
+                        Você precisou de 4 cortes, que é log⁡16 na base. <br>
+                        Agora, imagine que você tenha 10 pizzas e precisa cortá-las em 16 pedaços cada uma: <br>
+                        O número de cortes necessários ainda será log⁡16 = 4(Base 2), cortes por pizza. <br>
+                        E você tem 10 pizzas para cortar, então terá que fazer isso 10 vezes. <br>
+                        Total de cortes: 10 x 4=40.<br>
+                    </p>
+                    <p>
+                        Aqui está um exemplo reduzido, de um algoritmo que foi testado com numeros randomico, variando entre 
+                        arrays de 20 elemntos até 900 elementos. Altera o código para testar e ver a automação dele.
+
+                    </p>
+                    <p>
+                        <pre>
+                            <code>
+                               #include &lt;iostream &gt;
+                               using std::cout;
+                               using std::endl;
+                               #include &lt;cstdlib&gt;  // Para rand() e srand()
+                               #include &lt;ctime&gt;    // Para time()
+                               
+                               
+                               
+                               // Função para mesclar duas metades ordenadas do array
+                               void merge(int arr[], int inicio, int meio, int fim)
+                               {
+                                   int n1 = meio - inicio + 1, n2 = fim - meio;
+                                   int L[n1], R[n2], i, j, k;
+                               
+                                   for (i = 0; i &lt; n1; i++) L[i] = arr[inicio + i];
+                                   for (j = 0; j &lt; n2; j++) R[j] = arr[meio + 1 + j];
+                               
+                                   i = j = 0;
+                                   k = inicio;
+                                   while (i &lt; n1 && j &lt; n2) arr[k++] = (L[i] &lt;= R[j]) ? L[i++] : R[j++];
+                                   while (i &lt; n1) arr[k++] = L[i++];
+                                   while (j &lt; n2) arr[k++] = R[j++];
+                               }
+                               
+                               // Função recursiva para ordenar usando MergeSort
+                               void mergeSort(int arr[], int inicio, int fim)
+                               {
+                                   if (inicio &lt; fim)
+                                   {
+                                       int meio = inicio + (fim - inicio) / 2;
+                                       mergeSort(arr, inicio, meio);
+                                       mergeSort(arr, meio + 1, fim);
+                                       merge(arr, inicio, meio, fim);
+                                   }
+                               }
+                               
+                               int main()
+                               {
+                                   int arr[15] = {0},
+                                                 tamanho = sizeof(arr) / sizeof(arr[0]);//Maneira sutil de saber o tamanho de um vetor
+                                   // Inicializa o gerador de números aleatórios com base no tempo atual
+                                   srand(time(0));
+                               
+                               
+                                   for(int i=0; i &lt; tamanho; i++)
+                                   {
+                                       arr[i]=rand()%1000; 
+                                       // Gera números aleatórios de 0 a 999
+                                       cout &lt;&lt; " " &lt;&lt; arr[i];
+                                   }
+                               
+                                   cout &lt;&lt; "\n\n" &lt;&lt;endl;
+                               
+                                   mergeSort(arr, 0, tamanho - 1);
+                                   for (int i = 0; i &lt; tamanho; i++) cout &lt;&lt; " " &lt;&lt; arr[i] ;
+                                   return 0;
+                               }
+                                
+                            </code>
+                        </pre>
+                    </p>
+                    <p>
+                       Algoritimo de classificação é muito importante que tenha ao menos praticado e entendido a importãncia dele, muito em bora que não usará 
+                       para muitos casos. Ter em mente que o existe por trás dos panos de alguns algoritmo de ordenação é de crescimento acadêmico e profissional.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

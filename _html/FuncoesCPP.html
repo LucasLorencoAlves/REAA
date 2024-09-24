@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/Conteudo.css">
+    <link rel="stylesheet" href="../_css/body.css">
+    <link rel="stylesheet" href="../_css/Estilo.css">
+
+    <title>REAA</title>
+
+</head>
+
+<body>
+    <div id="interface">
+
+        <header>
+            <h1></h1>
+            <h4></h4>
+        </header>
+        <nav id="menu">
+            <a href="#">Currículo</a>
+            <a href="Categorias.html">Categorias</a>
+            <a href="#">Open Source</a>
+            
+        </nav>
+        <section id="conf-aulas">
+            <hgroup id="saudacoes">
+                <h2>Funções</h2>
+                <br>
+                <br>
+            </hgroup>
+
+            <p>
+                Na programação de baixo nível, o termo "função" muitas vezes se refere a um bloco de código que
+                realiza
+                uma tarefa específica e que pode ser chamado (invocado) de diferentes partes do programa. No
+                contexto da
+                programação de baixo nível, como em linguagens assembly ou mesmo em linguagens mais próximas do
+                hardware, como C e C++, a implementação de funções pode ser mais direta e menos abstrata do que em
+                linguagens
+                de alto nível.
+
+                Em linguagens de baixo nível e médio nível, uma função geralmente é definida por um endereço de
+                memória
+                e um conjunto
+                de instruções específicas que são executadas quando a função é chamada. As funções podem receber
+                parâmetros, que são valores passados para a função, e podem retornar um valor para o ponto de
+                chamada.
+            </p>
+            <p>
+                Mais importante do que saber montar um função em C++ ou qualquer outra linguagem de programação.
+                è conhecer o ciclo de uma função em um programa.
+
+                Quando você chama uma função em um programa, vários eventos ocorrem em sequência. Vamos entender o
+                processo passo a passo: <br>
+            </p>
+            <hgroup id="saudacoes">
+                <h2>1 Chamada da Função (Invocação):</h2>
+            </hgroup>
+            <p>No código do programa, você faz uma chamada para a função, especificando o seu nome e, se necessário,
+                passando argumentos.</p>
+
+            <hgroup id="saudacoes">
+                <h2>2 Transferência de Controle para a Função:</h2>
+            </hgroup>
+            <p>
+                A execução do programa é transferida para o início da função chamada. O controle agora está dentro
+                da
+                função.
+            </p>
+
+            <hgroup id="saudacoes">
+                <h2>3 Execução do Código da Função:</h2>
+            </hgroup>
+            <p>
+                O código dentro da função é executado. Isso inclui a execução das instruções e o processamento dos
+                argumentos, se houver.
+            </p>
+
+            <hgroup id="saudacoes">
+                <h2>4 Retorno de Valor (Opcional):</h2>
+            </hgroup>
+            <p>
+                Se a função tiver um valor de retorno, ela pode calcular esse valor e retorná-lo à parte do programa
+                que
+                fez a chamada. O valor retornado pode ser usado em expressões ou atribuído a uma variável.
+            </p>
+
+            <hgroup id="saudacoes">
+                <h2>5 Transferência de Controle de Volta:</h2>
+            </hgroup>
+            <p>
+                O controle é transferido de volta para o ponto no programa de onde a função foi chamada. A execução
+                continua a partir desse ponto.
+            </p>
+
+            <hgroup id="saudacoes">
+                <h2>6 Finalização da Função:</h2>
+            </hgroup>
+            <p>
+                Se necessário, há uma limpeza interna da função. Isso pode incluir a liberação de recursos alocados,
+                como memória dinâmica, e a remoção de variáveis locais da pilha de execução.
+            </p>
+            <p>
+                Essa sequência descreve o ciclo típico de uma chamada de função. Cada função encapsula uma tarefa
+                específica, e sua chamada permite que essa tarefa seja executada sem a necessidade de repetir o
+                código
+                em diferentes partes do programa. O uso de funções melhora a modularidade, a legibilidade e a
+                reusabilidade do código.
+            </p>
+            <p>
+                Leia atentamente esta pagina e tenta não avançar sem antes de sentir que está seguro no que se
+                refere a funções. No conteúdo
+                sobre ponteiros vou abordar o maximo possível sobre passagem de valores por cópia, endereço e
+                ponteiro, por hora
+                pegue o básico, que pode ser um divisor de águas daqui pra frente.
+            </p>
+            <h2>Sintaxe de uma função</h2>
+            <pre>
+                <code>
+                    &lt;tipo de retorno&gt; &lt;nome da funçao&gt;()
+                    {
+                        ..instrução a ser executado
+                    }
+                </code>
+            </pre>
+            <h3>Exemplos de uso de uma função.</h3>
+            <p>
+                Há dois uso bastante comum de uma função. Quando precisa que a função retorna algum valor ou que não
+                retorna valor algum que é
+                no caso, apenas mostrar algum valor no console. Mais a diante veremos que o tipo <em>void</em> é
+                muito usado
+                quando está trabalhando com ponteiros. <em>Void</em> pode não retornar nenhum valor, mas, pode ser
+                usada para modificar valores
+                diretamente nos endereços de memória.
+            </p>
+            <p>
+                O exemplo abaixo, mostra uma prática comum do uso de uma função.
+            <pre>
+                    <code>
+                        1 #include &lt;iostream&gt;
+                        2 using namespace std;
+                        3 //=======================
+                        4 //-Protótipo de funções-
+                        5 int soma(int, int);
+
+                        6  int main()
+                        7  {
+                        8    cout &lt;&lt;"A funcao soma retorna: " &lt;&lt;soma()&lt;&lt;endl;
+                            
+                        9    return 0;
+                        10 }
+                        
+                        11 //=======================
+                        12 //-Desenvolvimento de funções-
+                        13 int soma(int A, int B)
+                        14 {
+                        15   return A+B;
+                        16 }    
+                    </code>
+                </pre>
+            <figure class="Foto-Relogio">
+                <img src="../_imagens/resultado.png" />
+                <figcaption>
+                    <h5>
+                        Função retorna 4
+                    </h5>
+                </figcaption>
+            </figure>
+            </p>
+            <p>
+                vamos analizar o programa a cima. È um programa simples, mas que podemos aprender muito de sintaxe
+                pra não gerar dúvidas na hora de sair programando programas mais complexos, afinal você não vai
+                querer
+                ficar consultando toda hora como se faz.
+            </p>
+            <p>
+                Na linha 1, temos a inclusão da lib padrão do C++ <em>#include &lt;iostream&gt;</em>, na linha 2
+                temos a definição
+                do uso de todas as funçoes comun que fazem parte da lib padrão <em>using namespace std</em>, senão
+                fosse definido no topo
+                teria que usar <em>std::</em> toda vez que for chamar uma função ou operador comum do C++ (Ex: cout,
+                cin..).
+            </p>
+            <p>
+                A linha 5, tem o que chamamos de <em>protótipo de funções</em>, È de boa prática que definimos o
+                protótipo acima do <em>int main()</em>
+                <b>quando não for trabalhar com arquivos header</b>(veremos mais adiante). Definimos o corpo da
+                função abaixo do <em>int main()</em>.
+                No protótipo da função, é opcional declarar a variavel de argumento, mas seu tipo é imprescindível.
+
+            </p>
+            <p>
+                Feito isso, podemos usar a(s) função(oes) do modo que nos convém. No caso didático que descrevi,
+                estou invocando o resultado da função
+                no mesmo endereço em que ela está sendo chamada. Ou seja, imagina que num espaço físico de memoria é
+                criada a função <em>soma</em>
+                e o resultado é colocado na mesma região, como é demostrado na linha 8.
+            </p>
+            <p>
+                O operador <em>cout</em> desempenha o papel crucial de operador de fluxo de saída em C++. Sua
+                principal
+                função é exibir informações no console, conforme ilustrado na figura acima deste texto. Antes de
+                explorarmos algumas boas práticas relacionadas às funções, é relevante destacar que, ao utilizar o
+                valor retornado por uma função, é recomendável atribuir esse valor a uma variável auxiliar. Essa
+                prática possibilita o transporte eficiente desse valor para qualquer parte do programa ou sua
+                passagem como argumento para outras funções. Esta precaução contribui para a organização e
+                reusabilidade do código, assegurando que os resultados de uma função sejam adequadamente manipulados
+                e aplicados em diversos contextos dentro do programa.
+            </p>
+            <p>
+                Copie e cole o programa abaixo no Code-Blocks, analiza a saída e estude as formas mais comum de usar
+                uma função
+                , desde a prototipagem, desenvolvimento e chamada.
+            </p>
+            <pre id="codigo-final">
+                <code>
+                    #include <iostream>
+                        using namespace std;
+                        #include <cstring>
+                        using std::string;
+                        
+                        &#8260;&#8260; &#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;
+                        &#8260;&#8260;--Declaração das funções--
+                        int    soma00(int, int);
+                        int    soma01(int, int);
+                        int    clearValue();
+                        double pi();
+                        char   addrMemory(char);
+                        string nome(char[6]);
+                        void   display00(float);
+                        void   display01();
+                        
+                        &#8260;&#8260; &#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;
+                        &#8260;&#8260;--Corpo do programa--
+                        int main()
+                        {
+                            cout &lt;&lt;&lt;&lt; "Hello REAA" &lt;&lt;&lt;&lt; endl;
+                        
+                            int resultado=soma00(2, 3);
+                        
+                            cout &lt;&lt;"O retorno da funcao int eh:.............................................................." &lt;&lt; <br>
+                            soma00(3, 3)&lt;&lt;endl;&#8260;&#8260;&#8260;&#8260;Pode usar diretamente a função
+                            &#8260;&#8260;&#8260;&#8260;Ou pode usar uma variável auxiliar, atribuir o valor nela e usala em qualquer parte do programa
+                            cout&lt;&lt;endl;&#8260;&#8260;usado para quebrar uma linha
+                            cout &lt;&lt;"O retorno da funcao int atribuida na variavel -resultado- eh:............................"&lt;&lt; <br>
+                            resultado&lt;&lt;endl;
+                            cout&lt;&lt;endl;&#8260;&#8260;usado para quebrar uma linha
+                            &#8260;&#8260;A funcao soma01, retorna uma variavél com valor atribuido.
+                            cout&lt;&lt;"O retorno da função soma01 eh:..........................................................."&lt;&lt; <br>
+                            soma01(1, 2)&lt;&lt;endl;
+                            cout&lt;&lt;endl;&#8260;&#8260;usado para quebrar uma linha
+                            cout&lt;&lt;"A funcao clearValue nao tem nenhum parãmetro, mas pode retornar sim um valor"&lt;&lt;&lt;&lt;endl;
+                            cout&lt;&lt;endl;&#8260;&#8260; usado para quebrar uma linha
+                            cout&lt;&lt; " A função clearValue retorna o valor zero:................................................" &lt;&lt; <br>
+                            clearValue() &lt;&lt;endl;
+                            int Val=10;
+                            cout&lt;&lt;endl;&#8260;&#8260;usado para quebrar uma linha
+                            cout&lt;&lt;"O valor da variavel Val eh..............................................................." &lt;&lt; <br>
+                            Val &lt;&lt;endl;
+                            Val=clearValue();
+                            cout&lt;&lt;endl;&#8260;&#8260;usado para quebrar uma linha
+                            cout&lt;&lt;"Agora o valor da variavel Val eh........................................................." &lt;&lt; <br>
+                            Val &lt;&lt; endl; &#8260;&#8260;Limpeza do valor da variavel Val
+                            cout&lt;&lt;endl;&#8260;&#8260;usado para quebrar uma linha
+                            cout&lt;&lt;"O valor que a funcao peso retorna eh....................................................."&lt;&lt; <br>
+                             pi() &lt;&lt;endl;
+                            cout&lt;&lt;"A funcao char() retorna um caractere....................................................." &lt;&lt; <br>
+                            addrMemory('A') &lt;&lt; endl;
+                            cout&lt;&lt;endl;&#8260;&#8260;usado para quebrar uma linha
+                            cout&lt;&lt;"A funcao string retorna um vetor de caracteres..........................................." &lt;&lt; <br>
+                            nome("Lucas") &lt;&lt; endl;
+                            cout&lt;&lt;"A funcao display00 mostra o resultado da funcao interna..................................";
+                            display00(2.0);
+                            cout&lt;&lt;endl;&#8260;&#8260;usado para quebrar uma linha
+                            cout &lt;&lt;"A funcao display00 apresenta a string que esta dentro dela...............................";
+                            display01();
+                        
+                        
+                        
+                            return 0;
+                        } &#8260;&#8260;Fim
+                        <br>
+                        &#8260;&#8260; &#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;
+                        &#8260;&#8260;--Desenvolvimento das funções--
+                        int soma00(int A, int B)
+                        {
+                            return A+B;
+                        }&#8260;&#8260;Fim
+                        
+                        int soma01(int A, int B)
+                        {
+                            int resultado=A+B;
+                            return resultado;
+                        }&#8260;&#8260;Fiim
+                        
+                        int clearValue()
+                        {
+                            return 0;
+                        }&#8260;&#8260;Fim
+                        
+                        double pi()
+                        {
+                            return 3.14;
+                        }&#8260;&#8260;Fim
+                        
+                        char addrMemory(char caract)
+                        {
+                            if(caract=='A')
+                                return 'a';
+                            else if(caract=='B')
+                                return 'b';
+                            else if(caract=='C')
+                                return 'c';
+                        }
+                        
+                        string nome(char name[])
+                        {
+                            char str1[100] = "Saudacoes meu caro(a) ";
+                            &#8260;&#8260; char str2[100]= name;
+                        
+                            cout&lt;&lt;" Concatenated String:" &lt;&lt; endl;
+                            strcat(str1, name);
+                            return str1;
+                        }
+                        
+                        void  display00(float raio)
+                        {
+                            &#8260;&#8260; calculoda circunferência
+                            double Circunferencia=2*3.14*raio;
+                            cout&lt;&lt; " A circunferencia eh.." &lt;&lt; Circunferencia&lt;&lt;endl;
+                        }
+                        void display01()
+                        {
+                            cout&lt;&lt;  "Erro de momoria" &lt;&lt; endl;
+                        }
+                        &#8260;&#8260; &#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;&#61;
+                        &#8260;&#8260; --Desenvolvimento das funções--
+                </code>
+            </pre>
+            <hgroup id="saudacoes">
+                <h2>Considerações finais</h2>
+                <br>
+                <br>
+            </hgroup>
+            <p>
+                Modularizar tarefas, ou seja, transformar tarefas em blocos separados afim de práticar reuzabilidade
+                de código é de fato uma prática muito bem vista na área de desenvolvimento seja ela software ou hardware.
+                È imprescindível, a leitura do capitulo 6 do livro <em>como programaçar C++, 5°Ed, Deitel</em>, pois
+                neste cáptulo
+                é abordado muitos outros conceitos de funções nativas do C++, como getline, Sqrt e muitas outras
+                observações de Engenharia de Software
+                que pode ajudar você a se desenvolver neste conteúdo tão importante que é funções. Afinal trabalhar com funções é 
+                <b>dividir para conquistar.</b>
+            </p>
+            <p>Referência:Cap 6, Deitel, <a
+                    href="https://archive.org/details/ccomoprogramar0000deit/page/n9/mode/2up">https://archive.org/details/ccomoprogramar0000deit/page/n9/mode/2up</a>
+            </p>
+        </section>
+        
+
+    </div>
+    
+</body>
+
+</html>

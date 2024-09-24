@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/Conteudo.css">
+    <link rel="stylesheet" href="../_css/body.css">
+    <link rel="stylesheet" href="../_css/Estilo.css">
+
+    <title>REAA</title>
+
+</head>
+
+<body>
+    <div id="interface">
+
+        <header>
+            <h1></h1>
+            <h4></h4>
+        </header>
+        <nav id="menu">
+            <a href="#">Currículo</a>
+            <a href="Categorias.html">Categorias</a>
+            <a href="#">Open Source</a>
+            
+        </nav>
+        <section id="corpo">
+            <pre>
+             <code>
+             <font color="gray">Arquivo .hpp</font>
+             
+             #ifndef GEOMETRIA_H
+             #define GEOMETRIA_H
+ 
+             class Geometria
+             {
+                 public:
+                     Geometria(int=0, int=0, int=0);//cnt, pontos no espaço
+ 
+                     Geometria operator+(Geometria);
+ 
+ 
+                     int getX();//retorna o valor de x
+                     int getY();//retorna o valor de y
+                     int getZ();//retorna o valor de z
+ 
+ 
+                 private:
+                     int x,
+                         y,
+                         z;
+ 
+             };
+             #endif//GEOMETRIA_H
+ 
+             </code>
+            </pre>
+ ______________________________________________________________________
+ 
+ <pre>
+     <code>
+             <font color="gray">Arquivo .cpp</font>
+             
+             #include <iostream>
+             using namespace::std;
+             #include "Geometria.hpp"
+             
+             Geometria::Geometria(int X, int Y, int Z):
+                 x(X), y(Y), z(Z)
+             {
+             //vazio
+             }
+             
+             //Posso retornar um objeto também.
+             //Pois objeto é um tipo de dados também.
+             Geometria Geometria::operator+(Geometria P)
+             {
+                 x=x+P.x;
+                 y=y+P.y;
+                 z=z+P.z;
+                 return Geometria(x, y, z);
+             }
+             
+             int Geometria::getX()//retorna o valor de x
+             {
+                 return x;
+             }
+             
+             
+             
+             int Geometria::getY()//retorna o valor de y
+             {
+                 return y;
+             }
+             
+             int Geometria::getZ()//retorna o valor de z
+             {
+                 return z;
+             }     
+     </code>
+ </pre>
+ 
+         </section>
+ 
+ 
+         <!--Lateral direito-->
+         <aside id="Lateral">
+             <article id="div-lateral">
+                 
+                 <pre>
+                     <code>
+         <font color="gray">Arquivo main.cpp</font>
+ 
+         #include &lt;iostream&gt;
+         using namespace::std;
+ 
+         #include "Geometria.hpp"
+ 
+ 
+         int main()
+         {
+             cout &lt;&lt; "Hello REAA!" &lt;&lt; endl;
+             Geometria P1(2, 3, 4),
+                     P2(1, 2, 3),
+                     P3;
+ 
+             P3=P1+P2;
+ 
+             cout&lt;&lt;"P3("
+                 &lt;&lt;P3.getX()
+                 &lt;&lt;','
+                 &lt;&lt;P3.getY()
+                 &lt;&lt;','
+                 &lt;&lt;P3.getZ()
+                 &lt;&lt;")"
+                 &lt;&lt;endl;
+ 
+ 
+             return 0;
+         }
+ 
+ 
+                     </code>
+                 </pre>
+                 <figure class="saida_codigo">
+                     <img src="../_imagens/Screenshot from 2024-02-19 00-40-29.png" />
+                     <figcaption>
+                         <h5>
+                             Soma de dois pontos no espaço... 
+                         </h5>
+                     </figcaption>
+                 </figure>
+                    
+ 
+             </article>
+         </aside>
+ 
+        
+
+    </div>
+    
+</body>
+
+</html>

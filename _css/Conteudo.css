@@ -1,0 +1,387 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Fonte-Logo';
+    src: url("bubblegum-sans-regular.otf");
+    src: url("Dosis/Dosis-VariableFont_wght.ttf");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Titillium+Web:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;1,100&display=swap');
+
+
+
+body {
+    background-color: rgba(221, 221, 216, 0.7);
+    color: rgb(13, 13, 13);
+}
+
+/*Formatação da interface*/
+div#interface {
+    width: 1000px;
+    height: auto;
+    background-color: rgb(252, 252, 251);
+    margin: -40px auto 50px auto;
+    box-shadow: 0px 0px 10px black;
+    /*deslocamento lateral, deslocamento vertical, espalhamento da sombra, cor da sombra*/
+
+}
+
+
+
+header#cabecalho {
+    position: relative;
+    border-bottom: 1px rgb(81, 81, 82) solid;
+    width: -90px;
+    /*background: url("REAA-Logo001.PNG") no-repeat 1px 0px;*/
+    padding: 10px;
+}
+
+header#cabecalho h1 {
+    font-family: Arial, sans-serif;
+    font-size: 60px;
+    color: gray;
+    text-shadow: 1px 1px 2px rgb(171, 166, 166);
+    padding: 0px;
+    margin-left: 100px;
+    margin-bottom: 0px;
+
+
+}
+
+header#cabecalho h6 {
+    font-family: Arial, sans-serif;
+    color: gray;
+    text-shadow: 1px 1px 2px rgb(203, 201, 201);
+    padding: 0px;
+    margin-top: 0px;
+    margin-left: 50px;
+}
+
+hgroup#saudacoes h2 {
+
+    font-family: 'Titillium Web', sans-serif;
+    font-family: monospace;
+    color: rgb(132, 130, 130);
+    margin-bottom: -15px;
+
+
+}
+
+hgroup#saudacoes h5 {
+    position: relative;
+    font-family: 'Titillium Web', sans-serif;
+    font-family: monospace;
+    color: rgb(195, 193, 193);
+    margin: auto;
+    padding-left: 400px;
+}
+
+hgroup#saudacoes h4 {
+
+    font-family: 'Titillium Web', sans-serif;
+    font-family: monospace;
+    color: rgb(203, 199, 199);
+    margin-bottom: 80px;
+}
+
+
+p {
+    text-align: justify;
+    text-indent: 50px;
+    /* font-family: 'Montserrat', sans-serif;*/
+    font-family: 'Titillium Web', sans-serif;
+
+}
+
+div#Aulas {
+    /* margin: 10px 20px 0px 400px;*/
+    width: 600px;
+    height: auto;
+    margin: 40px auto 50px auto;
+}
+
+
+
+nav#menu ul {
+    position: absolute;
+    /*list-style: none;*/
+    top: -10px;
+    left: 700px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/*Sempre que for um id a chamada do estilo é um #*/
+/*foramtação menu e tudo que li será*/
+nav#menu li {
+    display: inline-block;
+    /*menu horizontal*/
+    background-color: rgb(231, 228, 228);
+    padding: 5px 2px 2px 5px;
+    margin: 1px -10px 0px 1px;
+}
+
+nav#menu li:hover {
+    background-color: rgb(206, 204, 204);
+}
+
+nav#menu a {
+    color: rgb(124, 122, 122);
+    text-decoration: none;
+}
+
+nav#menu a:hover {
+    color: rgb(245, 241, 241);
+
+}
+
+
+
+hgroup#logo-cabecalho {
+    font-size: 80px;
+    padding: 40px 0px 0px 0px;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+aside#Lateral {
+    display: block;
+    float: right;
+    width: 350px;
+    padding-right: 35px;
+
+}
+
+aside#Lateral h4 {
+    font-size: 12pt;
+    color: rgb(66, 65, 65);
+    background-color: rgba(73, 72, 72, 0.4);
+    padding: 5px 0px 5px 5px;
+    margin: 10px -20px 10px -30px;
+}
+
+aside#Lateral p {
+    font-size: 12pt;
+    padding: 5px 0px 5px 5px;
+    margin: 10px -20px 10px -30px;
+}
+
+/*hgroup#grupo-aulas{
+    margin: 150px auto;
+}*/
+
+
+ul#Lista-Aulas {
+    width: 900px;
+    margin: 0 auto;
+    padding: 50px;
+    overflow: hidden;
+    list-style:none;
+}
+
+ul#Lista-Aulas li {
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 5px;
+    border: 3px solid rgba(172, 168, 168, 0.4);
+    background-color: rgb(249, 245, 245);
+    box-shadow: 1px 1px 3px rgba(183, 181, 181, 0.4);
+    -webkit-transition: all 0.5s ease-in;
+
+}
+
+ul#Lista-Aulas li span {
+    opacity: 0;
+    color: rgb(248, 250, 250);
+    text-shadow: 1px 1px 1px rgb(71, 70, 70);
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 12pt;
+    line-height: 100px;
+    padding: 5px;
+
+}
+
+ul#Lista-Aulas li:hover span {
+    opacity: 1;
+}
+
+ul#Lista-Aulas li#Introducao-ao-C {
+    background: url('../_imagens/intrudução_a_C++.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;        
+    
+}
+
+
+
+ul#Lista-Aulas li#instrucoes-de-controle {
+    background: url('../_imagens/fluxograma.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+}
+
+ul#Lista-Aulas li#Funcoes {
+    background: url('../_imagens/funcao.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+ul#Lista-Aulas li#Passagem_referencia {
+    background: url('../_imagens/Referência_.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+ul#Lista-Aulas li#Ponteiro-vs-Endereco {
+    background: url('../_imagens/PonteiroVSEndereço.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+
+ul#Lista-Aulas li#OOP {
+    background: url('../_imagens/opp.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+ul#Lista-Aulas li:hover {
+    -webkit-transform: scale(1.08);
+}
+
+ul#Lista-Aulas li#Classes {
+    background: url('../_imagens/classes.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+ul#Lista-Aulas li#Heranca {
+    background: url('../_imagens/Herança.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+ul#Lista-Aulas li#Polimorfismo {
+    background: url('../_imagens/polimorfismo.PNG');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+
+ul#Lista-Aulas li#Template {
+    background: url('../_imagens/Templat.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+ul#Lista-Aulas li#Sobrecarga {
+    background: url('../_imagens/SobreCarga.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+
+
+ul#Lista-Aulas li#I-O-de-fluxos {
+    background: url('../_imagens/IO-Fluxo.PNG');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+ul#Lista-Aulas li#Memória-dinamica {
+    background: url('../_imagens/memoria.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+ul#Lista-Aulas li#Processamento-de-Arquivo {
+    background: url('../_imagens/Arquivo.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+ul#Lista-Aulas li#Classe-String {
+    background: url('../_imagens/classeString.PNG');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+/*
+ul#Lista-Aulas li#Programação-Web {
+    background: url('progWeb.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+*/
+
+ul#Lista-Aulas li#Pesquisa {
+    background: url('../_imagens/Pesquisa.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+ul#Lista-Aulas li#Classificacao {
+    background: url('../_imagens/Classifica.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+ul#Lista-Aulas li#Estrutura-de-dados {
+    background: url('../_imagens/EstruturaDados.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+}
+
+ul#Lista-Aulas li#bits {
+    background: url('../_imagens/bits.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+ul#Lista-Aulas li#Sistemas-embarcados {
+    background: url('../_imagens/embarcados.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    visibility: hidden;
+}
+
+h1:before {
+    align-content: center;
+    content: "REAA";
+    visibility: visible;
+}
+
+h4 {
+    visibility: hidden;
+}
+
+h4:before {    
+    content: "RECURSO EDUCACIONAL ACADEMICO ABERTO";
+    visibility: visible;
+
+}
+
+

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/Conteudo.css">
+    <link rel="stylesheet" href="../_css/body.css">
+    <link rel="stylesheet" href="../_css/Estilo.css">
+
+    <title>REAA</title>
+
+</head>
+
+<body>
+    <div id="interface">
+
+        <header>
+            <h1></h1>
+            <h4></h4>
+        </header>
+        <nav id="menu">
+            <a href="#">Currículo</a>
+            <a href="Categorias.html">Categorias</a>
+            <a href="#">Open Source</a>
+            
+        </nav>
+        <section id="conf-aulas">
+
+            <div id="Aulas">
+                <div id="Aulas">
+                    <hgroup id="saudacoes">
+                        <h2>Modelo</h2>
+                    </hgroup>
+                    <br>
+                    <br>
+                    <p>
+                        Quem vem do da liguagem C, sabe que tem uma semelhança entre <i>struct</i> e <i>class</i> no C++
+                        <i>struct</i> é um tipo de dado que agrupa outros tipos de dados. È uma forma de criar vetores
+                        cujo cada indice
+                        tem um grupo de varios tipos de dados do tipo estrutura, isso facilita simular um objeto com
+                        seus respctivos atributos
+                        poreḿ sem métodos.
+                    </p>
+                    <p>
+                        Veja abaixo, um exemplo que encontrará em muitos lugares. <br>
+                        >> Como criar um struct. <br>
+                        >> Como inicializar. <br>
+                        >> Como acessar os membros de dados da struct. <br>
+                        >> Como passar por referência (ideal na programação). <br>
+                    </p>
+                    <pre>
+                    <code>
+                        #include &lt;iostream &gt;                        
+                        using namespace std;
+                        <font color="gray">
+                        //Objeto Est_Clima do tipo struct </font>
+                        struct Est_Clima
+                        {
+                            string data;
+                            int    serie;
+                            float  velo_vento;
+                        
+                        } Estacao00, Estacao01; //Variaveis instanciadas do Objeto Est_Clima do tipo struct
+                        <font color="gray">
+                        //Assinatura das funções
+                        //Recebe o endereço da struct </font>
+                        void Monitoramento(Est_Clima &);
+                        void Display_Monitoramento(Est_Clima &);
+                        
+                        int main()
+                        {
+                            cout &lt;&lt; "Hello REAA!" &lt;&lt; endl;
+                        <font color="gray">
+                            //È assim mesmo que passo a Variaveis do tipo
+                            //struct por referencia(struct é um ponteiro naturalmente)
+                        </font>
+                            Monitoramento(Estacao00);
+                            Display_Monitoramento(Estacao00);
+                            <font color="gray">
+                        //Alternativa de iicialização de estrutura.</font>
+                            Estacao00={"03/06/2024", 5603, 0.48};
+                        
+                        
+                            Display_Monitoramento(Estacao00);
+                            Display_Monitoramento(Estacao00);
+                        
+                        
+                            return 0;
+                        }
+                        
+                        
+                        void Monitoramento(Est_Clima &estacaoZero)
+                        {
+                        
+                            Estacao00.data="02/12/2024";
+                            Estacao00.serie=45000;
+                            Estacao00.velo_vento=0.68;                        
+                        }                        
+                        
+                        void Display_Monitoramento(Est_Clima &estacaoZero)
+                        {
+                        
+                        
+                            cout &lt;&lt; "Velocidade vento: "     &lt;&lt; estacaoZero.velo_vento &lt;&lt; endl;
+                            cout &lt;&lt; "Serie do equipamento: " &lt;&lt; estacaoZero.serie      &lt;&lt; endl;
+                            cout &lt;&lt; "Data de registro: "     &lt;&lt; estacaoZero.data       &lt;&lt; endl;
+                                                
+                        }                        
+                        
+                    </code>
+                </pre>
+                    <hgroup id="saudacoes">
+                        <h2>struct vs class em C++</h2>
+                    </hgroup>
+                    <p>
+                        Em C++, a principal diferença entre uma struct e uma class está na visibilidade padrão dos
+                        membros: <br> <br>
+                        struct: Os membros são públicos por padrão. <br>
+                        class: Os membros são privados por padrão. <br>
+
+                        Ambos podem ter construtores, destrutores, funções membro, e podem usar herança e polimorfismo.
+                    </p>
+                    <hgroup id="saudacoes">
+                        <h2>uso de struct em sistyemas embarcados</h2>
+                    </hgroup>
+                    <p>
+                        Sistemas embarcados são geralmente dispositivos com recursos limitados (memória, capacidade de
+                        processamento, etc.)
+                        e executam tarefas específicas, como controle de sensores, automação industrial, dispositivos
+                        IoT, entre outros.
+                        O uso de structs nesses sistemas é bastante comum devido a vários fatores:
+                    </p>
+                    <hgroup id="saudacoes">
+                        <h2>Organização de Dados de Sensores:</h2>
+                    </hgroup>
+
+                    <p>
+                        Em sistemas embarcados, é comum lidar com múltiplos sensores, onde cada sensor pode ter vários
+                        atributos,
+                        como valor medido, status, tipo de sensor, etc. Usar uma struct para agrupar essas informações
+                        facilita a manipulação e o controle dos dados.
+                    <pre>
+                        <code>
+                            struct Sensor {
+                                int id;
+                                float valorMedido;
+                                bool status;
+                                char tipo[10];
+                            };                            
+                        </code>
+                    </pre>
+                    </p>
+                    <hgroup id="saudacoes">
+                        <h2>Comunicação e Protocolo de Dados:</h2>
+                    </hgroup>
+                    <p>
+                        Em sistemas embarcados, a comunicação entre dispositivos frequentemente
+                        envolve o envio e recebimento de pacotes de dados. Esses pacotes podem ser
+                        representados como structs, que organizam as diferentes partes do pacote (cabeçalho, payload,
+                        checksum, etc.).
+                    <pre>
+                        <code>
+                            struct Pacote {
+                                uint8_t cabecalho;
+                                uint8_t dados[8];
+                                uint8_t checksum;
+                            };                            
+                        </code>
+                    </pre>
+                    </p>
+                    <hgroup id="saudacoes">
+                        <h2>Mapeamento de Hardware:</h2>
+                    </hgroup>
+                    <p>
+                        structs podem ser usadas para mapear registros de hardware.
+                        Em sistemas embarcados, cada componente de hardware (como portas de entrada e saída)
+                        pode ser representado por um conjunto de registros (endereços de memória) que são agrupados em
+                        uma struct.
+                    <pre>
+                            <code>
+                                struct PortaIO {
+                                    volatile uint8_t DIR;  <font color="gray">// Direção da porta (entrada/saída)</font>
+                                    volatile uint8_t OUT;  <font color="gray">// Valor de saída</font>
+                                    volatile uint8_t IN;   <font color="gray">// Valor de entrada</font>
+                                };                                
+                            </code>
+                        </pre>
+                    </p>
+                    <hgroup id="saudacoes">
+                        <h2>Representação de Estados do Sistema:</h2>
+                    </hgroup>
+                    <p>
+                        Sistemas embarcados muitas vezes operam em estados finitos (ligado, desligado, erro, etc.).
+                        Usar structs para representar esses estados facilita a implementação de máquinas de estados.
+                    <pre>
+                            <code>
+                                struct EstadoSistema {
+                                    bool sistemaLigado;
+                                    bool erro;
+                                    uint8_t codigoErro;
+                                };                                
+
+                            </code>
+                        </pre>
+                    </p>
+                    <hgroup id="saudacoes">
+                        <h2>Redução de Uso de Memória:</h2>
+                    </hgroup>
+                    <p>
+                        Em comparação com classes que podem introduzir overhead adicional,
+                        structs simples são eficientes em termos de memória, tornando-as ideais para sistemas embarcados
+                        com recursos limitados.
+                    </p>
+                    <hgroup id="saudacoes">
+                        <h2>Considerações em Sistemas Embarcados</h2>
+                    </hgroup>
+                    <br>
+                    <hgroup id="saudacoes">
+                        <h2>Alinhamento de Memória:</h2>
+                    </hgroup>
+                    <p>
+                        É importante estar ciente do alinhamento de memória das structs,
+                        especialmente quando se comunica com hardware ou com outros sistemas, para garantir que os dados
+                        sejam interpretados corretamente.
+                    </p>
+                    <hgroup id="saudacoes">
+                        <h2>Uso de Memória:</h2>
+                    </hgroup>
+                    <p>
+                        Como sistemas embarcados geralmente têm memória limitada, é crucial minimizar o uso de memória,
+                        utilizando structs compactas e otimizadas.
+                    </p>
+                    <hgroup id="saudacoes">
+                        <h2>Eficiência:</h2>
+                    </hgroup>
+                    <p>
+                        O uso de structs deve ser otimizado para garantir que o código resultante seja eficiente, tanto
+                        em termos de processamento quanto de uso de memória.
+                    </p>
+                    <hgroup id="saudacoes">
+                        <h2>Conclusão</h2>
+                    </hgroup>
+                    <p>
+                        As structs são uma ferramenta poderosa em C++ para organizar dados complexos e melhorar a legibilidade 
+                        e a modularidade do código. Em sistemas embarcados, elas são especialmente úteis para representar dados 
+                        de sensores, mapear registros de hardware e gerenciar comunicação e protocolos, sendo uma escolha ideal 
+                        para esses ambientes restritos. Com a flexibilidade e eficiência que oferecem, as structs são fundamentais 
+                        para o desenvolvimento eficiente em sistemas embarcados.
+                    </p>
+                    
+                </div>
+            </div>
+
+        </section>
+        
+
+    </div>
+    
+</body>
+
+</html>
