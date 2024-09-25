@@ -213,7 +213,7 @@ nav#menu a:hover {
 section#corpo {
     /*ser motrada como um block*/
     display: block;
-    width: 550px;
+    width: 750px;
     float: left;
     border-right: 1px solid gray;
     padding-right: 15px;
@@ -224,7 +224,7 @@ section#conf-aulas {
     /*ser motrada como um block*/
     display: block;
     width: 750px;
-    padding-right: 0px;
+    padding-right: -10px;
     padding-left: 100px;
 }
 
@@ -368,9 +368,3 @@ figure.saida_codigo:hover figcaption {
     opacity: 1;
 }
 
-p#construcao
-{
-
-
-    
-}
