@@ -91,6 +91,8 @@ p {
     text-indent: 50px;
     /* font-family: 'Montserrat', sans-serif;*/
     font-family: 'Titillium Web', sans-serif;
+    line-height: 1.6;
+
 
 }
 
@@ -176,7 +178,7 @@ ul#Lista-Aulas {
     margin: 0 auto;
     padding: 50px;
     overflow: hidden;
-    list-style:none;
+    list-style: none;
 }
 
 ul#Lista-Aulas li {
@@ -210,26 +212,24 @@ ul#Lista-Aulas li#Introducao-ao-C {
     background: url('intrudução_a_C++.png');
     background-position: 50% 50%;
     background-size: 200px 200px;
-    background-repeat: no-repeat;        
-    
+    background-repeat: no-repeat;
+
 }
 
-ul#Lista-Aulas li#categoriaCplusplus
- {
+ul#Lista-Aulas li#categoriaCplusplus {
     background: url('pngwing.com.png');
     background-position: 50% 50%;
     background-size: 200px 200px;
-    background-repeat: no-repeat;        
-    
+    background-repeat: no-repeat;
+
 }
 
-ul#Lista-Aulas li#PageConstruction
- {
+ul#Lista-Aulas li#PageConstruction {
     background: url('paginaConstruction.png');
     background-position: 50% 50%;
     background-size: 210px 210px;
-    background-repeat: no-repeat;        
-    
+    background-repeat: no-repeat;
+
 }
 
 ul#Lista-Aulas li#instrucoes-de-controle {
@@ -394,10 +394,18 @@ h4 {
     visibility: hidden;
 }
 
-h4:before {    
+h4:before {
     content: "RECURSO EDUCACIONAL ACADEMICO ABERTO";
     visibility: visible;
 
 }
 
+main {           
+            
+    margin: 50px 70px 130px 70px;
+    background-color: #fff;
+    padding: 60px;           
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
