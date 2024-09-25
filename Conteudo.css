@@ -214,7 +214,23 @@ ul#Lista-Aulas li#Introducao-ao-C {
     
 }
 
+ul#Lista-Aulas li#categoriaCplusplus
+ {
+    background: url('pngwing.com.png');
+    background-position: 50% 50%;
+    background-size: 200px 200px;
+    background-repeat: no-repeat;        
+    
+}
 
+ul#Lista-Aulas li#PageConstruction
+ {
+    background: url('paginaConstruction.png');
+    background-position: 50% 50%;
+    background-size: 210px 210px;
+    background-repeat: no-repeat;        
+    
+}
 
 ul#Lista-Aulas li#instrucoes-de-controle {
     background: url('fluxograma.png');
