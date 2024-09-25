@@ -228,7 +228,12 @@ p.description {
 {
 
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     z-index: 9999;
+    background-color: #09ec27;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+
+    border-radius: 25px;
+    
 }
