@@ -23,15 +23,162 @@
             <a href="#">Currículo</a>
             <a href="Categorias.html">Categorias</a>
             <a href="#">Open Source</a>
-            
+
         </nav>
         <section id="conf-aulas">
-            
-        </section>
-        
 
+            <hgroup id="saudacoes">
+                <h2>Bitwise</h2>
+            </hgroup>
+            <br>
+            <br>
+            <hgroup id="saudacoes">
+                <h2>Eficiência em Controle de Hardware</h2>
+            </hgroup>
+            <br>
+            <p>
+                Em microcontroladores, as operações bitwise são essenciais para manipular diretamente os registradores de hardware.
+                Elas permitem controlar entradas e saídas, como LEDs, botões e portas de comunicação, de maneira eficiente e com baixo uso de recursos.
+            </p>
+            <hgroup id="saudacoes">
+                <h2>Economia de Memória e Processamento</h2>
+            </hgroup>
+            <br>
+            <p>
+                As operações bitwise utilizam menos ciclos de CPU e menos memória, características cruciais em sistemas embarcados com recursos limitados.
+            </p>
+            <hgroup id="saudacoes">
+                <h2>Controle de Flags e Configuração de Periféricos</h2>
+            </hgroup>
+            <br>
+            <p>
+                Bitwise é usado para definir, limpar e alternar bits individuais em registradores, 
+                facilitando a configuração de periféricos e o gerenciamento de estados do sistema. 
+            </p>
+
+            <p>
+                Nos sistemas microcontrolados todas as informações são codificadas em valores binários
+                , mas as maioria da vairáveis é composta por um conjunto de bits. Em geral, a manipulação da vairável
+                altera todos os bits ao mesmo tempo.
+
+            </p>
+            <p>
+                Existem, no entanto, algumas variavéis nas quais cada bit tem uma interpretação ou funcionalidade
+                diferente. por isso é necessário
+                realizar algumas operaçoes que mopdifiquem apenas um bit de cada vez
+            </p>
+
+            <p>
+                O lance é o seguinte, se você já entende sobre conversão de valores binários, entender a operação bit a
+                bit vai ser moleza. <br><br>
+                Digamos que eu tenha uma variavel <br><br>
+                <i>PortA = 0b00001;</i>
+                <font color="gray">//número 1 em binário</font> <br><br>
+                A seguinte notação: <br><br>
+                PortA |=(1 &lt;&lt; 2);<br><br>
+                significa, que o shift-left (&lt;&lt;) irá deslocar 3 bit para a esquerda, isso mesmo não é 2 e sim 3
+                por que começa no zero.  <br><br>          
+          
+            </p>
+            <hgroup id="saudacoes">
+                <h2>Veja  codigo e reproduza para entender melhor</h2>
+            </hgroup>
+
+            <pre>
+                <code>
+                    #include &lt; iostream &gt;
+                    using std::cout;
+                    using std::endl;
+                    
+                    #define BIT2 2
+                    #define BIT3 3
+                    #define BIT4 4
+                    #define BIT5 5
+                    
+                    
+                    int main()
+                    {
+                        int portA=0b000000,<font color="gray">//0</font>
+                            portB=0b001011,<font color="gray">//11</font>
+                            portC=0b000000,<font color="gray">//0</font>
+                            portD=0b000001,<font color="gray">//1</font>
+                            portE=0b010000,<font color="gray">//16</font>
+                            portF=0b000100;<font color="gray">//4</font>
+                    
+                        portA |=(1&lt;&lt;BIT2); <font color="gray">//ajusta o terceiro bit para 1; 0b000100</font>
+                        cout &lt;&lt;portA&lt;&lt;endl;
+                    
+                        portB = portB & 0b001000; <font color="gray">// mantém o bit 1 onde coincidir.</font>
+                        cout&lt;&lt;portB&lt;&lt;endl;
+                    
+                    
+                        portC |=(1&lt;&lt;3); <font color="gray">//desloca o bit 1 para esquerda, a quarta casa.</font>
+                        cout&lt;&lt;portC&lt;&lt;endl;
+                    
+                    
+                        portD ^=(1&lt;&lt;BIT2) | (1&lt;&lt;BIT4); <font color="gray">//0b10101, ajusta o terceiro e quinto bit</font>
+                        cout &lt;&lt; portD&lt;&lt;endl;
+                    
+                        cout &lt;&lt; portE &lt;&lt; endl;
+                        portE &= ~(1&lt;&lt;3);<font color="gray">//ajusta o terceiro bit pra zero, ouseja desliga o terceiro bit</font>
+                        cout &lt;&lt; portE &lt;&lt; endl;
+                    
+                        cout &lt;&lt;portE &lt;&lt; endl;
+                        portE ^= (1&lt;&lt;3);<font color="gray">//inverte o terceiro bit.</font>
+                        cout &lt;&lt; portE &lt;&lt; endl;
+                    
+                        portF=portF & (1&lt;&lt;2); <font color="gray">//verifica se o terceiro bit é 1. Retorna o valor em binario</font>
+                        cout &lt;&lt; portF &lt;&lt; endl;                                      
+                    
+                        return 0;
+                    }
+                    
+                </code>
+            </pre>
+            Confira a resposta.
+            <figure class="Foto-AllanKay">
+                <img src="Screenshot from 2024-09-24 16-53-46.png" />                
+            </figure>
+            Confira outro exemplo legal de analizar esta técnica de mani bit a bit.
+            Nele é possível entender melhor quando se precisa ligar ou desligar varios I/O tendo apenas 
+            uma única variavel alocada;
+            <pre>
+                <code>
+                    #include &lt; iostream &gt;
+                    using namespace std;
+                    
+                    int main() {
+                        unsigned short int estadoLEDs = 0b00000000; <font color="gray">// Todos os LEDs desligados</font>
+                    
+                        <font color="gray">// Ligar o LED na posição 2 (contando a partir de 0)</font>
+                        estadoLEDs |= (1 &lt;&lt; 2); <font color="gray">// Resultado: 0b00000100 (LED 2 ligado)</font>
+                    cout &lt;&lt;estadoLEDs&lt;&lt;endl;
+                    <font color="gray">// Desligar o LED na posição 2</font>
+                        estadoLEDs &= ~(1 &lt;&lt; 2); <font color="gray">// Resultado: 0b00000000 (LED 2 desligado)</font>
+                    cout&lt;&lt;estadoLEDs&lt;&lt;endl;
+                    <font color="gray">// Alternar o LED na posição 3</font>
+                        estadoLEDs ^= (1 &lt;&lt; 3); <font color="gray">// Resultado: 0b00001000 (LED 3 alternado)</font>
+                    cout &lt;&lt; estadoLEDs &lt;&lt; endl;
+                    <font color="gray">// Verificar se o LED na posição 3 está ligado  </font>
+                        if (estadoLEDs & (1 &lt;&lt; 3)) {
+                            cout &lt;&lt; "LED 3 está LIGADO" &lt;&lt; endl;
+                        } else {
+                            cout &lt;&lt; "LED 3 está DESLIGADO" &lt;&lt; endl;
+                        }
+                    
+                        return 0;
+                    }
+                </code>
+            </pre>
+            Confira a resposta.
+            <figure class="Foto-AllanKay">
+                <img src="Screenshot from 2024-09-24 23-08-59.png" />                
+            </figure>
+        </section>
+
+        <br><br>
     </div>
-    
+
 </body>
 
 </html>
