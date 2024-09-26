@@ -188,10 +188,14 @@ p.description {
     background-color: #333;
     border-radius: 50%;
     position: absolute;
-    left: 130px; /* Ajuste para alinhar com a linha */
+    left: 10px; /* Ajuste para alinhar com a linha */
     top: 5px;
 }
 
+h3#local{
+    font-size: 18px;
+    color: #5d5f5e;
+}
 .experience-details {
     max-width: 700px;
 }
