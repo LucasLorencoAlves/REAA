@@ -225,12 +225,28 @@ ul#Lista-Aulas li#categoriaCplusplus {
 }
 
 ul#Lista-Aulas li#PageConstruction {
-    background: url('paginaConstruction.png');
+    background: url('paginaConstruction.png ');
     background-position: 50% 50%;
     background-size: 210px 210px;
     background-repeat: no-repeat;
 
 }
+
+ul#Lista-Aulas li#SistemasEmbarcados {
+    background: url('stm001.png');
+    background-position: 50% 50%;
+    background-size: 180px 180px;
+    background-repeat: no-repeat;
+
+}
+ul#Lista-Aulas li#STM32 {
+    background: url('stm00.png');
+    background-position: 50% 50%;
+    background-size: 180px 180px;
+    background-repeat: no-repeat;
+
+}
+
 
 ul#Lista-Aulas li#instrucoes-de-controle {
     background: url('fluxograma.png');
