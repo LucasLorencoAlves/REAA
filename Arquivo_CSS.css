@@ -41,6 +41,8 @@ div#botton-campo
 body {
     background-color: rgba(221, 221, 216, 0.7);
     color: rgb(13, 13, 13);
+  
+  
 }
 
 input
@@ -49,7 +51,12 @@ input
     height: 60px;
 }
 
-
+@media screen and(max-width:100px){
+    section, main{
+        width: 100px;
+        padding: 0%;
+    }
+}
 
 
 button
