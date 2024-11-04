@@ -5,11 +5,14 @@ main {
     padding: 0px;           
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-   
+   width: 370px;
 
 }
 
-
+img
+{
+    width: 370px;
+}
 section#conf-aulas {
     /*ser motrada como um block*/
     display: block;
