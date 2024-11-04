@@ -1,0 +1,44 @@
+main {           
+    margin-left: 230px;
+    margin-right: auto;    
+    background-color: #fff;
+    padding: 40px;           
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   
+
+}
+
+
+section#conf-aulas {
+    /*ser motrada como um block*/
+    display: block;
+    width: 750px;
+    padding-right: 0px;
+    padding-left: 100px;
+}
+
+section#teste 
+{
+    margin:20px;
+    color: #585757;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+p
+{
+    font-size:x-large;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+div#botton-campo
+{
+
+    text-align: center;
+}
+
+body {
+    background-color: rgba(221, 221, 216, 0.7);
+    color: rgb(13, 13, 13);
+}
+
