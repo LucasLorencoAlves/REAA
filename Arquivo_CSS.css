@@ -1,6 +1,7 @@
 main {           
-    margin-left: 230px;
-    margin-right: auto;    
+    
+
+    position:absolute; 
     background-color: #fff;
     padding: 40px;           
     border-radius: 10px;
@@ -15,7 +16,7 @@ section#conf-aulas {
     display: block;
     width: 750px;
     padding-right: 0px;
-    padding-left: 100px;
+    
 }
 
 section#teste 
