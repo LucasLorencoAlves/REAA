@@ -51,10 +51,9 @@ input
     height: 60px;
 }
 
-@media screen and(max-width:100px){
-    section, main{
-        width: 100px;
-        padding: 0%;
+@media (max-width: 600px) {
+    header {
+        font-size: 1.2rem;
     }
 }
 
