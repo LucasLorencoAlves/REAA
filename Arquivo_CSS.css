@@ -47,6 +47,15 @@ body {
   
 }
 
+footer
+{
+    font-size:80%;
+    font-family:monospace;
+    color: rgb(127, 129, 129);
+    position: absolute;
+    padding-left: 20%;
+}
+
 input
 {
     width: 120px;
